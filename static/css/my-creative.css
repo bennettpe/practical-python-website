@@ -1,0 +1,13 @@
+/*-----------------------------------*/
+/* main.css: Add and override styles */
+/*-----------------------------------*/
+
+/* Increase font-size */
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+  font-size: 16px;
+}
+
+/* Reduce padding */
+section {
+  padding: 6rem 0;
+}
