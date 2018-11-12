@@ -11,3 +11,9 @@
 section {
   padding: 6rem 0;
 }
+
+/* Increase width */
+hr {
+  max-width: 75px;
+  border-width: 3px;
+}
