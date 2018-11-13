@@ -18,10 +18,10 @@
 <body> 
 
     <!-- Bootstrap theme (Creative) downloaded from  https://github.com/BlackrockDigital/startbootstrap-creative -->
-    
+    <body id="page-top">
+      
     <!-- Navigation Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top"> Geography Quiz Game </a>
         <button class="navbar-toggler navbar-toggler-right" 
@@ -50,10 +50,8 @@
           </ul>
         </divHear
       </div>
-      
     </nav>
     
-    <!-- Add Style= to override header background image -->
     <header class="masthead text-center text-white d-flex" style=”background-image: url(‘static/img/header.jpg’)"> <!-- Add Style= to override header background image -->
       <div class="container my-auto">
         <div class="row">
@@ -94,7 +92,7 @@
       </div>
     </section>
 
-    <!-- How To PlaySection -->
+    <!-- How To Play Section -->
     <section id="howtoplay">
       <div class="container">
         <div class="row">
@@ -117,116 +115,55 @@
         </div>
       </div>
     </section>
-
-    <section class="p-0" id="portfolio">
-      <div class="container-fluid p-0">
-        <div class="row no-gutters popup-gallery">
+ 
+    <!-- Quiz Select Section -->
+    <section class="bg-primary text-center" id="selectquiz">
+      <div class="container-fluid">
+        <h2 class="section-heading text-white"> QUIZ SELECTION </h2>
+        <hr class="light mx-auto">
+       <div class="row"> 
+     
+         <div class="col-lg-4 col-sm-6 text-center">
+           <img src="/static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg" alt="" class="rounded mx-auto img-thumbnail">
+           <p class="text-faded mb-2"> Geography 1 (18 Questions) </br> Click Below for questions on Geography </p> 
+           <button type ="button"  href="#geography1" class="btn btn-light btn-rounded js-scroll-trigger mb-4"> Select Geography 1 </button>
+         </div>
+         
+         <div class="col-lg-4 col-sm-6 text-center">
+           <img src="/static/img/portfolio/thumbnails/image-from-rawpixel-id-433915.jpg" alt="" class="rounded mx-auto img-thumbnail">
+           <p class="text-faded mb-2"> Geography 2 (18 Questions) </br> Click Below for questions on Geography </p>
+           <button type ="button" href="#geography2" class="btn btn-light btn-rounded js-scroll-trigger mb-4"> Select Geography 2 </button>
+         </div>
+         
+        <div class="col-lg-4 col-sm-6 text-center">
+          <img src="/static/img/portfolio/thumbnails/image-from-rawpixel-id-90625.jpg" alt="" class="rounded mx-auto img-thumbnail">
+          <p class="text-faded mb-2"> Least Populous Of The Three ? (18 Questions) </br> Click Below for questions on Populous </p>
+          <button type ="button" href="#populous" class="btn btn-light btn-rounded js-scroll-trigger mb-4">Select Populous </button>
+         </div> 
+         
+        <div class="col-lg-4 col-sm-6 text-center">
+          <img src="/static/img/portfolio/thumbnails/image-from-rawpixel-id-442135.jpg" alt="" class="rounded mx-auto img-thumbnail">
+          <p class="text-faded mb-2"> Odd One Out Capitals ? (18 Questions) </br> Click Below for questions on Capitals </p>
+          <button type ="button" href="#capitals" class="btn btn-light btn-rounded js-scroll-trigger mb-0"> Select Capitals </button>
+         </div> 
+         
+        <div class="col-lg-4 col-sm-6 text-center">
+          <img src="/static/img/portfolio/thumbnails/image-from-rawpixel-id-424508.jpg" alt="" class="rounded mx-auto img-thumbnail">
+          <p class="text-faded mb-2"> Who Owns These Islands (18 Questions) </br> Click Below for questions on Islands </p>
+          <button type ="button" href="#islands" class="btn btn-light btn-rounded js-scroll-trigger mb-0"> Select Islands </button>
+        </div> 
+          
+        <div class="col-lg-4 col-sm-6 text-center">
+          <img src="/static/img/portfolio/thumbnails/image-from-rawpixel-id-431844.jpg" alt="" class="rounded mx-auto img-thumbnail">
+          <p class="text-faded mb-2"> Which City Is Highest ? (18 Questions) </br> Click Below for questions on Above Sea Level </p>
+          <button type ="button" href="#highest" class="btn btn-light btn-rounded js-scroll-trigger mb-0"> Select Highest </button>
+        </div> 
         
-          <!-- Geography-1 Quiz Selector -->
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="static/img/portfolio/fullsize/image-from-rawpixel-id-90517.jpg">
-              <img class="img-fluid" src="/static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="geography-1">
-                   Geography 1
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          
-          <!-- Geography-2 Quiz Selector -->
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="static/img/portfolio/fullsize/image-from-rawpixel-id-433915.jpg">
-              <img class="img-fluid"  src="static/img/portfolio/thumbnails/image-from-rawpixel-id-433915.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="geography-2">
-                    Geography 2
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          
-          <!-- Least Populous Of The Three ? Quiz Selector -->
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="static/img/portfolio/fullsize/image-from-rawpixel-id-90625.jpg">
-              <img class="img-fluid"  src="static/img/portfolio/thumbnails/image-from-rawpixel-id-90625.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="least-populous">
-                    Least Populous Of The Three ?
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          
-          <!-- Odd One Out Capitals ? Quiz Selector -->
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="static/img/portfolio/fullsize/image-from-rawpixel-id-442135.jpg">
-              <img class="img-fluid"  src="static/img/portfolio/thumbnails/image-from-rawpixel-id-442135.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="odd-one">
-                   Odd One Out Capitals ?
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          
-          <!-- Who Owns These Islands ? Quiz Selector -->
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="static/img/portfolio/fullsize/image-from-rawpixel-id-424508.jpg">
-              <img class="img-fluid"  src="static/img/portfolio/thumbnails/image-from-rawpixel-id-424508.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="who-owns">
-                    Who Owns These Islands ?
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          
-          <!-- Which City Is Highest ? Quiz Selector -->
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="static/img/portfolio/fullsize/image-from-rawpixel-id-431844.jpg">
-              <img class="img-fluid"  src="static/img/portfolio/thumbnails/image-from-rawpixel-id-431844.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Category
-                  </div>
-                  <div class="which-city">
-                    Which City Is Highest ?
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          
-        </div>
+        <p class="text-faded"> Images by  xxxx </p> 
+        
       </div>
-    </section>
+     </div>
+    </section>  
 
     <section class="bg-dark text-white">
       <div class="container text-center">
@@ -260,7 +197,7 @@
         
       </div>
     </section>
-
+    
     <!-- JQuery minified Javascript file (v3.3.1)         --> <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}">                        </script>
     <!-- Bootstrap core JavaScript minified file (v4.1.3) --> <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}">        </script>
     <!-- jQuery Easing minified file (v1.4.1)             --> <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}">          </script>  
