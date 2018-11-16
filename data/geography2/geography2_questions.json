@@ -1,0 +1,200 @@
+[
+  {
+    "question_number": 1,
+    "question": "What is the largest country in the world (by area)?",
+    "option_a": "United States",
+    "option_b": "Russia",
+    "option_c": "Canada",
+    "option_d": "China",
+    "answer": "Russia",
+    "answer_letter": "B",
+    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/None_%28orthographic_projection%29.svg/480px-None_%28orthographic_projection%29.svg.png"
+  },
+  {
+    "question_number": 2,
+    "question": "Which city's famous nickname is the 'Pearl of the Orient'?",
+    "option_a": "Singapore",
+    "option_b": "Taipei",
+    "option_c": "Kyoto",
+    "option_d": "Hong Kong",
+    "answer": "Hong Kong",
+    "answer_letter": "D",
+    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Asia_%28orthographic_projection%29.svg/480px-Asia_%28orthographic_projection%29.svg.png"
+  },
+  {
+    "question_number": 3,
+    "question": "Which of the following is NOT one of the 'four corners' states?",
+    "option_a": "Arizona",
+    "option_b": "Utah",
+    "option_c": "New Mexico",
+    "option_d": "Nevada",
+    "answer": "Nevada",
+    "answer_letter": "D",
+    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/USA_orthographic.svg/480px-USA_orthographic.svg.png"
+  },
+  {
+    "question_number": 4,
+    "question": "Which of the following countries does NOT have a population exceeding 200 million?",
+    "option_a": "Pakistan",
+    "option_b": "Brazil",
+    "option_c": "Nigeria",
+    "option_d": "Indonesia",
+    "answer": "Nigeria",
+    "answer_letter": "C",
+    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Population_density.png/640px-Population_density.png"
+  },
+  {
+    "question_number": 5,
+    "question": "To the nearest thousand miles. what is the circumference of the world at the equator?",
+    "option_a": "25000 mi",
+    "option_b": "150000 mi",
+    "option_c": "10000 mi",
+    "option_d": "100000 mi",
+    "answer": "25000 mi",
+    "answer_letter": "A",
+    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Equator_sign_kenya.jpg/267px-Equator_sign_kenya.jpg"
+  },
+  {
+    "question_number": 6,
+    "question": "Muscat is the capital of which country?",
+    "option_a": "Bahrain",
+    "option_b": "Yemen",
+    "option_c": "Jordan",
+    "option_d": "Oman",
+    "answer": "Oman",
+    "answer_letter": "D",
+    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Muscat_Gate_Museum.jpg/640px-Muscat_Gate_Museum.jpg"
+  },
+  {
+    "question_number": 7,
+    "question": "Which is the world's smallest continent (by area)?",
+    "option_a": "South America",
+    "option_b": "Europe",
+    "option_c": "Antarctica",
+    "option_d": "Oceania",
+    "answer": "Oceania",
+    "answer_letter": "D",
+    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/None_%28orthographic_projection%29.svg/480px-None_%28orthographic_projection%29.svg.png"
+  },
+  {
+    "question_number": 8,
+    "question": "The flag of which country is the only non-rectangular national flag?",
+    "option_a": "Bhutan",
+    "option_b": "Vatican City",
+    "option_c": "Nepal",
+    "option_d": "Switzerland",
+    "answer": "Nepal",
+    "answer_letter": "C",
+    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Flag_of_Nepal.svg/394px-Flag_of_Nepal.svg.png"
+  },
+  {
+    "question_number": 9,
+    "question": "Which of the following countries is NOT a member state of the European Union?",
+    "option_a": "Norway",
+    "option_b": "Sweden",
+    "option_c": "Finland",
+    "option_d": "Denmark",
+    "answer": "Norway",
+    "answer_letter": "A",
+    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Nordic_countries_orthographic.svg/480px-Nordic_countries_orthographic.svg.png"
+  },
+  {
+    "question_number": 10,
+    "question": "Which is NOT a capital of South Africa?",
+    "option_a": "Cape Town",
+    "option_b": "Bloemfontein",
+    "option_c": "Johannesburg",
+    "option_d": "Pretoria",
+    "answer": "Johannesburg",
+    "answer_letter": "C",
+    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Location_South_Africa_AU_Africa.svg/517px-Location_South_Africa_AU_Africa.svg.png"
+  },
+  {
+    "question_number": 11,
+    "question": "How many islands is Japan made up of?",
+    "option_a": 12852,
+    "option_b": 6852,
+    "option_c": 852,
+    "option_d": 3852,
+    "answer": 3852,
+    "answer_letter": "B",
+    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Japan_%28orthographic_projection%29.svg/480px-Japan_%28orthographic_projection%29.svg.png"
+  },
+  {
+    "question_number": 12,
+    "question": "The Gal\ufffdpagos Islands form part of which South American country?",
+    "option_a": "Brazil",
+    "option_b": "Ecuador",
+    "option_c": "Peru",
+    "option_d": "Chile",
+    "answer": "Ecuador",
+    "answer_letter": "B",
+    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/South_America_%28orthographic_projection%29.svg/480px-South_America_%28orthographic_projection%29.svg.png"
+  },
+  {
+    "question_number": 13,
+    "question": "Which island is the easternmost member of the Antilles?",
+    "option_a": "St. Vincent",
+    "option_b": "Barbados",
+    "option_c": "Grenada",
+    "option_d": "Trinidad",
+    "answer": "Barbados",
+    "answer_letter": "B",
+    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Antillas_%28orthographic_projection%29.svg/480px-Antillas_%28orthographic_projection%29.svg.png"
+  },
+  {
+    "question_number": 14,
+    "question": "Which country of Oceania is the smallest independent republic in the world (by area)?",
+    "option_a": "Nauru",
+    "option_b": "Kiribati",
+    "option_c": "Palau",
+    "option_d": "Micronesia",
+    "answer": "Nauru",
+    "answer_letter": "A",
+    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Oceania_%28orthographic_projection%29.svg/480px-Oceania_%28orthographic_projection%29.svg.png"
+  },
+  {
+    "question_number": 15,
+    "question": "Which of these countries does NOT border Russia?",
+    "option_a": "Kazakhstan",
+    "option_b": "North Korea",
+    "option_c": "Poland",
+    "option_d": "Armenia",
+    "answer": "Armenia",
+    "answer_letter": "D",
+    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Russian_Federation_%28orthographic_projection%29_-_only_Crimea_disputed.svg/480px-Russian_Federation_%28orthographic_projection%29_-_only_Crimea_disputed.svg.png"
+  },
+  {
+    "question_number": 16,
+    "question": "Which Scottish lake contains more water than all of the lakes and rivers of England and Wales combined?",
+    "option_a": "Loch Morar",
+    "option_b": "Loch Ness",
+    "option_c": "Loch Tay",
+    "option_d": "Loch Lomond",
+    "answer": "Loch Ness",
+    "answer_letter": "B",
+    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Scottish_clan_map.png/365px-Scottish_clan_map.png"
+  },
+  {
+    "question_number": 17,
+    "question": "What percentage of Canadians are estimated to live within 100 miles of the US border?",
+    "option_a": "10%",
+    "option_b": "90%",
+    "option_c": "50%",
+    "option_d": "75%",
+    "answer": "75%",
+    "answer_letter": "D",
+    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/CAN_orthographic.svg/480px-CAN_orthographic.svg.png"
+  },
+  {
+    "question_number": 18,
+    "question": "What is the longest mountain range in the world?",
+    "option_a": "Himalayas",
+    "option_b": "Rockies",
+    "option_c": "Transantarctics",
+    "option_d": "Andes",
+    "answer": "Andes",
+    "answer_letter": "D",
+    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Aerial_photo_of_the_Andes.jpg/388px-Aerial_photo_of_the_Andes.jpg"
+  }
+]
