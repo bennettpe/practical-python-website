@@ -126,37 +126,38 @@
          <div class="col-lg-4 col-sm-6 text-center">
            <img src="/static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg" alt="" class="rounded mx-auto img-thumbnail">
            <p class="text-light mb-2"> Geography 1 (18 Questions) </br> Click Below for questions on Geography </p> 
-           <button type ="button"  href="#geography1" class="btn btn-light btn-rounded js-scroll-trigger mb-4"> Select Geography 1 </button>
+           <a href={{url_for('geography1_get_user')}}> <button type ="button" class="btn btn-light btn-rounded js-scroll-trigger mb-4"> Select Geography 1 </button> </a>
+           
          </div>
          
          <div class="col-lg-4 col-sm-6 text-center">
            <img src="/static/img/portfolio/thumbnails/image-from-rawpixel-id-433915.jpg" alt="" class="rounded mx-auto img-thumbnail">
            <p class="text-light mb-2"> Geography 2 (18 Questions) </br> Click Below for questions on Geography </p>
-           <button type ="button" href="#geography2" class="btn btn-light btn-rounded js-scroll-trigger mb-4"> Select Geography 2 </button>
+           <a href={{url_for('geography2_get_user')}}> <button type ="button" class="btn btn-light btn-rounded js-scroll-trigger mb-4"> Select Geography 2 </button> </a>
          </div>
          
         <div class="col-lg-4 col-sm-6 text-center">
           <img src="/static/img/portfolio/thumbnails/image-from-rawpixel-id-90625.jpg" alt="" class="rounded mx-auto img-thumbnail">
           <p class="text-light mb-2"> Least Populous Of The Three (27 Questions) </br> Click Below for questions on Populous </p>
-          <button type ="button" href="#populous" class="btn btn-light btn-rounded js-scroll-trigger mb-4">Select Populous </button>
+          <a href={{url_for('populous_get_user')}}> <button type ="button" class="btn btn-light btn-rounded js-scroll-trigger mb-4"> Select Populous </button> </a>
          </div> 
          
         <div class="col-lg-4 col-sm-6 text-center">
           <img src="/static/img/portfolio/thumbnails/image-from-rawpixel-id-442135.jpg" alt="" class="rounded mx-auto img-thumbnail">
           <p class="text-light mb-2"> Odd One Out Capitals (18 Questions) </br> Click Below for questions on Capitals </p>
-          <button type ="button" href="#capitals" class="btn btn-light btn-rounded js-scroll-trigger mb-0"> Select Capitals </button>
+          <a href={{url_for('capitals_get_user')}}> <button type ="button" class="btn btn-light btn-rounded js-scroll-trigger mb-4"> Select Capitals </button> </a>
          </div> 
          
         <div class="col-lg-4 col-sm-6 text-center">
           <img src="/static/img/portfolio/thumbnails/image-from-rawpixel-id-424508.jpg" alt="" class="rounded mx-auto img-thumbnail">
           <p class="text-light mb-2"> Who Owns These Islands (20 Questions) </br> Click Below for questions on Islands </p>
-          <button type ="button" href="#islands" class="btn btn-light btn-rounded js-scroll-trigger mb-0"> Select Islands </button>
+          <a href={{url_for('islands_get_user')}}> <button type ="button" class="btn btn-light btn-rounded js-scroll-trigger mb-4"> Select Islands </button> </a>
         </div> 
           
         <div class="col-lg-4 col-sm-6 text-center">
           <img src="/static/img/portfolio/thumbnails/image-from-rawpixel-id-431844.jpg" alt="" class="rounded mx-auto img-thumbnail">
           <p class="text-light mb-2"> Which City Is Highest (20 Questions) </br> Click Below for questions on Above Sea Level </p>
-          <button type ="button" href="#highest" class="btn btn-light btn-rounded js-scroll-trigger mb-0"> Select Highest </button>
+           <a href={{url_for('highest_get_user')}}> <button type ="button" class="btn btn-light btn-rounded js-scroll-trigger mb-4"> Select Highest </button> </a>
         </div> 
         
        </div>
@@ -222,52 +223,7 @@
     </section>
     
     <!-- Footer -->
-    <footer id="footer" class="bg-secondary text-center text-white">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 my-4">
-            <span class="copyright"> <small> Copyright &copy; Your Website 2018 </small> </span>
-          </div>
-          
-          <div class="col-md-4 my-3">
-            <ul class="list-inline list-social">
-              <li class="list-inline-item social-twitter">
-                <a href="#">
-                  <span class="fa-stack fa-lg">
-                     <i class="fas fa-circle  fa-stack-2x">           </i>
-                     <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              
-              <li class="list-inline-item social-facebook">
-               <a href="#">
-                  <span class="fa-stack fa-lg">
-                     <i class="fas fa-circle     fa-stack-2x">           </i>
-                     <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              
-              <li class="list-inline-item social-linkedin">
-                <a href="#">
-                  <span class="fa-stack fa-lg">
-                     <i class="fas fa-circle      fa-stack-2x">           </i>
-                     <i class="fab fa-linkedin-in fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          
-          <div class="col-md-4 my-3">
-            <p> <small> Creative is a free to use, open source Bootstrap theme created by
-               <a href="http://startbootstrap.com"> Start Bootstrap </small> </a> </p>
-          </div>
-          
-        </div>
-      </div>
-    </footer>
+    {% include 'footer.html' %}
           
     <!-- JQuery minified Javascript file (v3.3.1)         --> <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}">                        </script>
     <!-- Bootstrap core JavaScript minified file (v4.1.3) --> <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}">        </script>
