@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+                                                          <title> Practical Python Project "CAPITALS_USERNAME.HTML" (Paul Bennett) </title
+    <!-- Include standard links                       --> {% include 'head.html' %}                                                       
+    <!-- My Custom styles for this template           --> <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my-creative.css') }}"> 
+</head>
+ 
+<body> 
+<!-- Bootstrap theme (Creative) downloaded from  https://github.com/BlackrockDigital/startbootstrap-creative -->
+    <body id="page-top">
+      
+    <!-- Navigation Navbar -->
+    {% include 'navbar_username.html' %}
+    
+    <section class="masthead bg-primary text-center" id="quiz_header">
+      <div class="container-fluid ">
+        <div class="row">
+			   <div class="col-lg-6 col-sm-6 text-center">
+    			 <h2 class="text-center text-dark"> {{category}} Quiz ? </h2>
+    			 <hr class="light mb-4">
+    			 <img class="rounded mx-auto img-thumbnail" src={{ img_id }} alt={{ category }}>
+    			 <p class="text-dark mb-2"> </br> Can you choose the captial city that is <strong> <u>NOT</u> </strong> on a given continent? </p>
+			   </div>
+			  
+			   <div class="col-lg-6 col-sm-6 text-center">
+			   	<h4> Please enter username to commence quiz: </h4>
+    			  <form method="POST">
+    			  	<div class="input-group">
+          			 <input id={{ category }} + "_username" type="text" class="form-control" name={{ category }} + "_username" placeholder="Enter your username here">
+          			 </div> </br>
+          			 <button name="redirect" class="btn btn-light btn-xl js-scroll-trigger" value="Redirect"> Submit Username </button>
+			      </form> </br>
+			   </div>
+			  
+		  </div>
+	   </div>
+    </section>
+    
+    <!-- Footer -->
+    {% include 'footer.html' %}
+    
+    <!-- Script -->
+    {% include 'script.html' %} 
+ 
+ </body>
+ 
+</html>  

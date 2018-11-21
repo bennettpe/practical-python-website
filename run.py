@@ -1,5 +1,6 @@
 import os                                     # Using operating system dependent functionality.
 from flask import Flask                       # From module flask (import class Flask).
+from flask import json                        # From module flask (import class json).
 from flask import render_template             # From module flask (import class render_template).
 from flask import redirect                    # From module flask (import class redirect).
 from flask import request                     # From module flask (import class request).
@@ -12,35 +13,42 @@ app = Flask(__name__)                         # Construct an instance of Flask c
 def index():
     return render_template('index.html')      # Routing for index.html 
 
-# Route Decorator for geography1 questions    
-@app.route('/geography1_get_user')
-def geography1_get_user():
-    return render_template('geography1_get_user.html', category="Geography 1")               # Routing for geography1_get_user.html
-    
-# Route Decorator for geography2 questions    
-@app.route('/geography2_get_user')
-def geography2_get_user():
-    return render_template('geography2_get_user.html', category="Geography 2")               # Routing for geography2_get_user.html    
-    
-# Route Decorator for populous questions    
-@app.route('/populous_get_user')
-def populous_get_user():
-    return render_template('populous_get_user.html', category="Least Populous Of The Three") # Routing for populous_get_user.html   
-    
-# Route Decorator for capitals questions    
-@app.route('/capitals_get_user')
-def capitals_get_user():
-    return render_template('capitals_get_user.html', category="Odd One Out Capitals")        # Routing for capitals_get_user.html       
+# Route Decorator for geography1 username    
+@app.route('/geography1_username', methods=["GET", "POST"])
+def geography1_username():
+    if request.method == 'POST':
+       image = 'static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg'
+    return render_template('geography1_username.html', category='Geography 1', img_id=image)                # Routing for geography1_username.html
 
-# Route Decorator for islands questions    
-@app.route('/islands_get_user')
+# Route Decorator for geography2 username    
+@app.route('/geography2_username')
+def geography2_username():
+    image = 'static/img/portfolio/thumbnails/image-from-rawpixel-id-433915.jpg'
+    return render_template('geography2_username.html', category='Geography 2', img_id=image)                # Routing for geography2_username.html    
+    
+# Route Decorator for populous username    
+@app.route('/populous_username')
+def populous_username():
+    image = 'static/img/portfolio/thumbnails/image-from-rawpixel-id-90625.jpg'
+    return render_template('populous_username.html', category='Least Populous Of The Three', img_id=image)  # Routing for populous_username.html   
+    
+# Route Decorator for capitals username    
+@app.route('/capitals_username')
+def capitals_get_user(): 
+    image = 'static/img/portfolio/thumbnails/image-from-rawpixel-id-442135.jpg'
+    return render_template('capitals_username.html', category='Odd One Out Capitals', img_id=image)         # Routing for capitals_username.html 
+
+# Route Decorator for islands username    
+@app.route('/islands_username')
 def islands_get_user():
-    return render_template('islands_get_user.html', category="Who Owns These Islands")        # Routing for islands_get_user.html   
+    image = 'static/img/portfolio/thumbnails/image-from-rawpixel-id-424508.jpg'
+    return render_template('islands_username.html', category='Who Owns These Islands', img_id=image)        # Routing for islands_username.html   
 
 # Route Decorator for highest questions    
-@app.route('/highest_get_user')
+@app.route('/highest_username')
 def highest_get_user():
-    return render_template('highest_get_user.html', category="Which City Is Highest")         # Routing for highest_get_user.html   
+    image = 'static/img/portfolio/thumbnails/image-from-rawpixel-id-431844.jpg'
+    return render_template('highest_username.html', category='Which City Is Highest', img_id=image)       # Routing for highest_username.html
     
 if __name__ == '__main__':                    # __name__ will be equal to "__main__"
 
