@@ -4,6 +4,7 @@ from flask import json                        # From module flask (import class 
 from flask import render_template             # From module flask (import class render_template).
 from flask import redirect                    # From module flask (import class redirect).
 from flask import request                     # From module flask (import class request).
+from flask import session                     # From module flask (import class session).
 from flask import url_for                     # From module flask (import class url_for).
 
 app = Flask(__name__)                         # Construct an instance of Flask class for our webapp.
@@ -16,9 +17,12 @@ def index():
 # Route Decorator for geography1 username    
 @app.route('/geography1_username', methods=["GET", "POST"])
 def geography1_username():
-    if request.method == 'POST':
-       image = 'static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg'
-    return render_template('geography1_username.html', category='Geography 1', img_id=image)                # Routing for geography1_username.html
+    image = 'static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg'
+    if request.method == 'POST':                                                                            # if request method is 'POST' send data to server
+       with open("data/geography1/geography1_username.txt", "a") as username_list:                          # Append USERNAME as username_list
+            username_list.write(request.form["geography1_username"] + "\n")                                 # Write  USERNAME to geography1_username.txt   
+       return redirect(request.form["geography1_username"])                                                 # Redirect to geography1_username.txt  
+    return render_template('geography1_username.html', category='Geography 1', img_id=image)                # Renders template from template folder
 
 # Route Decorator for geography2 username    
 @app.route('/geography2_username')
@@ -34,19 +38,19 @@ def populous_username():
     
 # Route Decorator for capitals username    
 @app.route('/capitals_username')
-def capitals_get_user(): 
+def capitals_username(): 
     image = 'static/img/portfolio/thumbnails/image-from-rawpixel-id-442135.jpg'
     return render_template('capitals_username.html', category='Odd One Out Capitals', img_id=image)         # Routing for capitals_username.html 
 
 # Route Decorator for islands username    
 @app.route('/islands_username')
-def islands_get_user():
+def islands_username():
     image = 'static/img/portfolio/thumbnails/image-from-rawpixel-id-424508.jpg'
     return render_template('islands_username.html', category='Who Owns These Islands', img_id=image)        # Routing for islands_username.html   
 
 # Route Decorator for highest questions    
 @app.route('/highest_username')
-def highest_get_user():
+def highest_username():
     image = 'static/img/portfolio/thumbnails/image-from-rawpixel-id-431844.jpg'
     return render_template('highest_username.html', category='Which City Is Highest', img_id=image)       # Routing for highest_username.html
     
