@@ -2,23 +2,12 @@
 /* main.css: Add and override styles */
 /*-----------------------------------*/
 
-/* Override Primary Button color 
-.btn-primary {
-  background-color: #FF8E00;
-  border-color: #FF8E00;
+/* add vertical border */
+#right_column {
+  border-left: solid 3px #fff;
 }
-*/
 
-/* Override Primary Background color 
-.bg-primary {
-  background-color: #FF8E00 !important;
+/* add vertical border */
+.form-control {
+width: 50%;
 }
-*/
-
-/* Override fa-twitter icon 
-.fa-twitter:before {
-          content:"\f099";
-            color: white;
- background-color: blue;
-}
-*/

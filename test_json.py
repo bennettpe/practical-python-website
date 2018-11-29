@@ -3,6 +3,7 @@ import json
 with open("data/geography1/geography1_questions.json", "r") as json_file:
      questions = json.load(json_file)
 
+index=0
 # For loop to select question keyword variables
 #items = []
 #for item in questions:
@@ -15,4 +16,6 @@ with open("data/geography1/geography1_questions.json", "r") as json_file:
 #  in   questions])
 
 # Print first record 
-print(questions[0])  
+#print(questions[0])  
+print(questions[index] ["question_number"] )
+print(questions[index] ["question"] )

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+                                                          <title> Practical Python Project "GEOGRAPHY_1_QUIZ.HTML" (Paul Bennett) </title>
+    <!-- Include standard links                       --> {% include 'head.html' %}                                                       
+    <!-- My Custom styles for this template           --> <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my-creative.css') }}"> 
+</head>
+ 
+<body> 
+<!-- Bootstrap theme (Creative) downloaded from  https://github.com/BlackrockDigital/startbootstrap-creative -->
+    <body id="page-top">
+
+    <!-- Navigation Navbar -->
+    {% include 'navbar_quiz.html' %}
+    
+    <section class="masthead bg-primary text-center" id="quiz_header">
+     <div class="container-fluid">
+         <div class="row">
+			   <div class="col-md-5 mb-5 mb-lg-0 text-center">
+    			 <h2 class="text-center text-uppercase text-dark"> {{ category }} Quiz ? </h2> </br>
+    			 <h4 class="text-center text-uppercase text-light"> How many questions do you know in {{ category }} </h4> </br>
+    			 <hr class="light mb-5">
+    			 <img class="rounded mx-auto img-thumbnail" src="{{ img_id }}" alt="{{ category }}"> 
+    			 </br>
+    			 <h3 class="text-center text-light"> Welcome &nbsp; <span class="text-dark"> {{ username }} </span> </h3> 
+			   </div>
+			   
+		 <div class="col-md-7 mb-7 mb-lg-0 text-center" id="right_column">
+    		    <h3 class ="text-dark"> Q{{ geography1_questions[index] ["question_number"] }}.&nbsp; <span class="text-light"> {{ geography1_questions[index] ["question"] }} </span> </h3>
+    		    </br>
+    			<img class="rounded mx-auto img-thumbnail" src="{{ geography1_questions[index] ["image_source"] }}" alt=""geography_1_jpgs"> 
+    			
+    			<div>
+    				<h4 id="options">
+    				</br>
+    			    <span class="text-dark"> 1. <span class="text-light"> {{ geography1_questions[index]["option_a"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    				<span class="text-dark"> 2. <span class="text-light"> {{ geography1_questions[index]["option_b"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    				<span class="text-dark"> 3. <span class="text-light"> {{ geography1_questions[index]["option_c"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    				<span class="text-dark"> 4. <span class="text-light"> {{ geography1_questions[index]["option_d"] }} </span>
+    				</h4>
+    	        </div>
+    	        
+    		  	 <form method="POST">
+    				<div class="input-group">
+          			<input id="username_answer" type="text" class="form-control" name="username_answer" placeholder="Enter your answer here">
+          			<input type="hidden" name="index" id="index" value={{ index }}>
+          			<input type="hidden" name="score" id="score" value={{ score }}>
+          			<input type="hidden" name="correct_answer" id="correct_answer" value={{ correct_answer }}>
+          			</div> </br>
+          			<input type="submit" class="btn btn-light btn-rounded" value="Submit Answer" />
+			    </form> </br>
+			    
+			    <h3 Class ="text-light"> Your current score is <span> {{ score }} </span> out of 18 </h3>
+				<p>
+				{% if user_answer != correct_answer %} 
+              	{% for incorrect in incorrect_answer %}
+               	{{ incorrect }} {{ message1 }} <span style="text-decoration:underline;font-weight:bold" > {{ previous_answer }} </span> </br>
+               	{{ message2 }}
+               	{% endfor %}
+               	{% endif %}
+               	</p>
+    	  </div> 
+    	  
+         </div>
+	 </div>	
+	</section>	
+	
+    <!-- Footer -->
+    {% include 'footer.html' %}
+    
+    <!-- Script -->
+    {% include 'script.html' %} 
+</body>
+ 
+</html>     

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-                                                          <title> Practical Python Project "GEOGRAPHY_2_USERNAME.HTML" (Paul Bennett) </title
+                                                          <title> Practical Python Project "GEOGRAPHY_2_USERNAME.HTML" (Paul Bennett) </title>
     <!-- Include standard links                       --> {% include 'head.html' %}                                                       
     <!-- My Custom styles for this template           --> <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my-creative.css') }}"> 
 </head>
@@ -20,7 +20,7 @@
 			   <div class="col-lg-6 col-sm-6 text-center">
     			 <h2 class="text-center text-dark"> {{category}} Quiz ? </h2>
     			 <hr class="light mb-4">
-    			 <img class="rounded mx-auto img-thumbnail" src={{ img_id }} alt={{ category }}>
+    			  <img class="rounded mx-auto img-thumbnail" src="{{ img_id }}" alt="{{ category }}">
 			   </div>
 			  
 			   <div class="col-lg-6 col-sm-6 text-center">

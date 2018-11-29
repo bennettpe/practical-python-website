@@ -8,7 +8,7 @@
     "option_d": "Denmark",
     "answer": "Ireland",
     "answer_letter": "C",
-    "image_source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/StormontCarson.jpg/640px-StormontCarson.jpg"
+    "image_source": "./static/images/Geography 1/640px-StormontCarson.jpg"
   },
   {
     "question_number": 2,
