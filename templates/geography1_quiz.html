@@ -26,20 +26,20 @@
     			 <h3 class="text-center text-light"> Welcome &nbsp; <span class="text-dark"> {{ username }} </span> </h3> 
 			   </div>
 			   
-		 <div class="col-md-7 mb-7 mb-lg-0 text-center" id="right_column">
-    		    <h3 class ="text-dark"> Q{{ geography1_questions[index] ["question_number"] }}.&nbsp; <span class="text-light"> {{ geography1_questions[index] ["question"] }} </span> </h3>
-    		    </br>
-    			<img class="rounded mx-auto img-thumbnail" src="{{ geography1_questions[index] ["image_source"] }}" alt=""geography_1_jpgs"> 
+		       <div class="col-md-7 mb-7 mb-lg-0 text-center" id="right_column">
+    		      <h3 class ="text-dark"> Q{{ geography1_questions[index] ["question_number"] }}.&nbsp; <span class="text-light"> {{ geography1_questions[index] ["question"] }} </span> </h3>
+    		      </br>
+    		   	  <img class="rounded mx-auto img-thumbnail" src="{{ geography1_questions[index] ["image_source"] }}" alt=""geography_1_jpgs"> 
     			
-    			<div>
+    		      <div>
     				<h4 id="options">
     				</br>
-    			    <span class="text-dark"> 1. <span class="text-light"> {{ geography1_questions[index]["option_a"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    				<span class="text-dark"> 2. <span class="text-light"> {{ geography1_questions[index]["option_b"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    				<span class="text-dark"> 3. <span class="text-light"> {{ geography1_questions[index]["option_c"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    				<span class="text-dark"> 4. <span class="text-light"> {{ geography1_questions[index]["option_d"] }} </span>
+    			    <span class="text-dark"> 1. <span class="text-light"> {{ geography1_questions[index]["option1"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    				<span class="text-dark"> 2. <span class="text-light"> {{ geography1_questions[index]["option2"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    				<span class="text-dark"> 3. <span class="text-light"> {{ geography1_questions[index]["option3"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    				<span class="text-dark"> 4. <span class="text-light"> {{ geography1_questions[index]["option4"] }} </span>
     				</h4>
-    	        </div>
+    	          </div>
     	        
     		  	 <form method="POST">
     				<div class="input-group">
@@ -49,24 +49,25 @@
           			<input type="hidden" name="correct_answer" id="correct_answer" value={{ correct_answer }}>
           			</div> </br>
           			<input type="submit" class="btn btn-light btn-rounded" value="Submit Answer" />
-			    </form> </br>
-			    
+			     </form> 
+			      </br>
 			    <h3 Class ="text-light"> Your current score is <span> {{ score }} </span> out of 18 </h3>
-				<p>
-				{% if user_answer != correct_answer %} 
+			    <p>
+				{% if username_answer != correct_answer %} 
               	{% for incorrect in incorrect_answer %}
-               	{{ incorrect }} {{ message1 }} <span style="text-decoration:underline;font-weight:bold" > {{ previous_answer }} </span> </br>
-               	{{ message2 }}
+               	{{ incorrect }} {{ message_incorrect }} <span style="text-decoration:underline;font-weight:bold" > {{ correct_answer }} </span> </br>
+               	{{ message_next_question }}
                	{% endfor %}
                	{% endif %}
                	</p>
-    	  </div> 
-    	  
-         </div>
+			    
+    	  </div>
+        </div>
 	 </div>	
 	</section>	
 	
     <!-- Footer -->
+    
     {% include 'footer.html' %}
     
     <!-- Script -->

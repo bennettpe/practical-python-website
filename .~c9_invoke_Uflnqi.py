@@ -16,15 +16,13 @@ def index():
 @app.route('/geography1_get_username',methods = ['GET', 'POST'])
 def geography1_get_username():
     
-    catname  = "Geography 1"                                                                      
-    filename = "./data/geography1/geography1_username.txt"                                         
-    imgname  = "./static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg"                
+    catname  = "Geography 1"                                                                       # Catergory Name
+    filename = "./data/geography1/geography1_username.txt"                                         # Username Filename 
+    imgname  = "./static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg"                # Image Filename
        
     if request.method == 'POST':                                                                   
        with open(filename, "a") as username_list:                                                  
-            username_list.write(request.form["geography1_username"] + "\n") 
-            os.remove("./data/geography1/geography1_correct_answer.txt")
-            os.remove("./data/geography1/geography1_incorrect_answer.txt")
+            username_list.write(request.form["geography1_username"] + "\n")                         
        return redirect(request.form["geography1_username"])                                        
     return render_template("geography1_get_username.html", category=catname, img_id=imgname)       
    
@@ -35,57 +33,17 @@ def geography1_get_username():
 @app.route('/<geography1_username>',methods = ['GET', 'POST'])                                                  
 def geography1_user(geography1_username):                                                   
 
-    catname  = "Geography 1"                                                                        
-    filename = "./data/geography1/geography1_questions.json"                                       
-    imgname  = "./static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg"               
+    catname  = "Geography 1"                                                                        # Catergory Name
+    filename = "./data/geography1/geography1_questions.json"                                        # Input Filename
+    imgname  = "./static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg"                # Image Filename
     questions =[]  
    
     with open(filename, "r") as questions_file:                                                   
-         questions = json.load(questions_file)  
+         questions = json.load(questions_file)                                                
          index = 0                                                                       
          score = 0 
-         correct_answer = questions[index] ["answer"]
-         open("./data/geography1/geography1_correct_answer.txt", "a") 
-         open("./data/geography1/geography1_incorrect_answer.txt", "a") 
-         open("./data/geography1/geography1_final_score.txt", "a") 
-         
-    if request.method == "POST": 
-        index = int(request.form["index"])
-        score = int(request.form["score"])
-        correct_answer = (request.form["correct_answer"])
-        username_answer = request.form["username_answer"].title()   
-        
-        if username_answer == correct_answer: 
-            index +=1 
-            with open("./data/geography1/geography1_correct_answer.txt", "a") as answer:
-                answer.write(request.form["username_answer"] + "\n")
-            score +=1
-        else:
-            with open("./data/geography1/geography1_incorrect_answer.txt", "a") as answer:
-                answer.write(request.form["username_answer"] + "\n") 
-            index +=1
-            score = score
-            
-        if request.method == "POST":  
-            if index >= 18:
-               final_score = {"Score": request.form["score"], "Username": geography1_username} 
-               json.dump(final_score, open("data/geography1/geography1_scoreboard.json", "a"))
-               with open("./data/geography1/geography1_final_score.txt", "a") as answer:
-                   answer.write(request.form["score"] + "\n")
-                   return redirect("georgaphy1_quiz_completed")
-                       
-    return render_template("geography1_quiz.html", 
-                            category              = catname,
-                            correct_answer        = questions[index] ["answer"],
-                            correct_number        = questions[index] ["question_number"],
-                            geography1_questions  = questions,
-                            img_id                = imgname, 
-                            index                 = index,
-                            message_correct       = "is correct!",
-                            message_incorrect     = "is incorrect! The correct answer was",
-                            message_next_question = "Try The Next Question!",
-                            score                 = score,
-                            username              = geography1_username)               
+         c
+    return render_template("geography1_quiz.html", category=catname, img_id=imgname, username=geography1_username, index=index, geography1_questions=questions)               
      
  
 # Route Decorator for geography2 username    
