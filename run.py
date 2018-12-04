@@ -1,7 +1,8 @@
 import os                                     
-from flask import Flask, json, render_template, redirect, request, url_for  
+from flask import Flask, flash, json, render_template, redirect, request, url_for  
 
 app = Flask(__name__)   
+app.secret_key ="b'\xa0\xba+\xe5\xaa\x8b\xac\x01\x96\x1f<)86\x84\x04" # Key generated from Secretkey.py
 
 #--------------------------------#
 # Route Decorator for index.html # 
@@ -9,6 +10,15 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html')                                                            
+
+#---------------------------#
+# Get last incorrect answer # 
+#---------------------------#
+def get_geography1_incorrect_answer():  
+    answers = []
+    with open("./data/geography1/geography1_incorrect_answer.txt", "r") as incorrect_answer:
+        answers = [row for row in incorrect_answer]
+        return answers[-1:]
 
 #--------------------------------------#
 # Get Username for geography1 category # 
@@ -22,9 +32,9 @@ def geography1_get_username():
        
     if request.method == 'POST':                                                                   
        with open(filename, "a") as username_list:                                                  
-            username_list.write(request.form["geography1_username"] + "\n") 
-            os.remove("./data/geography1/geography1_correct_answer.txt")
-            os.remove("./data/geography1/geography1_incorrect_answer.txt")
+            username_list.write(request.form["geography1_username"] + "\n")        # Save username 
+            open("./data/geography1/geography1_correct_answer.txt", 'w').close()   # Empty txt file
+            open("./data/geography1/geography1_incorrect_answer.txt", 'w').close()
        return redirect(request.form["geography1_username"])                                        
     return render_template("geography1_get_username.html", category=catname, img_id=imgname)       
    
@@ -37,54 +47,62 @@ def geography1_user(geography1_username):
 
     catname  = "Geography 1"                                                                        
     filename = "./data/geography1/geography1_questions.json"                                       
-    imgname  = "./static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg"               
-    questions =[]  
+    imgname  = "./static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg" 
+    check_correct  =[]
+    questions      =[]  
    
     with open(filename, "r") as questions_file:                                                   
          questions = json.load(questions_file)  
+         
          index = 0                                                                       
          score = 0 
          correct_answer = questions[index] ["answer"]
-         open("./data/geography1/geography1_correct_answer.txt", "a") 
-         open("./data/geography1/geography1_incorrect_answer.txt", "a") 
+         open("./data/geography1/geography1_correct_answer.txt", "a")   # Create txt file
+         open("./data/geography1/geography1_incorrect_answer.txt", "a")  
          open("./data/geography1/geography1_final_score.txt", "a") 
          
-    if request.method == "POST": 
+    if request.method == "POST":
         index = int(request.form["index"])
         score = int(request.form["score"])
-        correct_answer = (request.form["correct_answer"])
-        username_answer = request.form["username_answer"].title()   
+        correct_answer  = (request.form["correct_answer"])
+        username_answer =  request.form["username_answer"].title() 
+        question_number =  request.form["question_number"]
         
         if username_answer == correct_answer: 
-            index +=1 
-            with open("./data/geography1/geography1_correct_answer.txt", "a") as answer:
-                answer.write(request.form["username_answer"] + "\n")
+            with open("./data/geography1/geography1_correct_answer.txt", "a") as answered:   # Save Correct Answers
+                answered.write(request.form["username_answer"].title() + "\n")
+            index +=1 # increment by one    
             score +=1
+            check_correct = True
         else:
-            with open("./data/geography1/geography1_incorrect_answer.txt", "a") as answer:
-                answer.write(request.form["username_answer"] + "\n") 
+            with open("./data/geography1/geography1_incorrect_answer.txt", "a") as answered: # Save InCorrect Answers
+                answered.write(request.form["username_answer"].title() + "\n")  
             index +=1
             score = score
+            check_correct = False
             
+        # When all questions have been answered, save final score in scoreboard file #   
         if request.method == "POST":  
-            if index >= 18:
-               final_score = {"Score": request.form["score"], "Username": geography1_username} 
-               json.dump(final_score, open("data/geography1/geography1_scoreboard.json", "a"))
-               with open("./data/geography1/geography1_final_score.txt", "a") as answer:
-                   answer.write(request.form["score"] + "\n")
-                   return redirect("georgaphy1_quiz_completed")
-                       
+           if index == 18: #Total number of questions for category
+              final_score = {"Number Of Questions": request.form["index"], "Score": request.form["score"], "Username": geography1_username} 
+              json.dump(final_score, open("data/geography1/geography1_scoreboard.json", "a"))
+           with open("./data/geography1/geography1_final_score.txt", "a") as answered:
+               answered.write(request.form["score"] + "\n")
+        return redirect("index.html")
+
+    incorrect_answer = get_geography1_incorrect_answer()
+    
     return render_template("geography1_quiz.html", 
                             category              = catname,
+                            img_id                = imgname, 
+                            geography1_questions  = questions,
+                            index                 = index,
+                            score                 = score,
+                            check_correct         = check_correct,
                             correct_answer        = questions[index] ["answer"],
                             correct_number        = questions[index] ["question_number"],
-                            geography1_questions  = questions,
-                            img_id                = imgname, 
-                            index                 = index,
-                            message_correct       = "is correct!",
-                            message_incorrect     = "is incorrect! The correct answer was",
-                            message_next_question = "Try The Next Question!",
-                            score                 = score,
+                            incorrect_answer      = incorrect_answer,
+                            incorrect_number      = questions[index-1] ["question_number"],
                             username              = geography1_username)               
      
  

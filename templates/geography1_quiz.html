@@ -15,7 +15,8 @@
     {% include 'navbar_quiz.html' %}
     
     <section class="masthead bg-primary text-center" id="quiz_header">
-     <div class="container-fluid">
+        
+    <div class="container-fluid">
          <div class="row">
 			   <div class="col-md-5 mb-5 mb-lg-0 text-center">
     			 <h2 class="text-center text-uppercase text-dark"> {{ category }} Quiz ? </h2> </br>
@@ -30,7 +31,7 @@
     		      <h3 class ="text-dark"> Q{{ geography1_questions[index] ["question_number"] }}.&nbsp; <span class="text-light"> {{ geography1_questions[index] ["question"] }} </span> </h3>
     		      </br>
     		   	  <img class="rounded mx-auto img-thumbnail" src="{{ geography1_questions[index] ["image_source"] }}" alt=""geography_1_jpgs"> 
-    			
+    		   	  
     		      <div>
     				<h4 id="options">
     				</br>
@@ -43,27 +44,25 @@
     	        
     		  	 <form method="POST">
     				<div class="input-group">
-          			<input id="username_answer" type="text" class="form-control" name="username_answer" placeholder="Enter your answer here">
-          			<input type="hidden" name="index" id="index" value={{ index }}>
-          			<input type="hidden" name="score" id="score" value={{ score }}>
-          			<input type="hidden" name="correct_answer" id="correct_answer" value={{ correct_answer }}>
+          			<input type="text"   name="username_answer" id="username_answer" class="form-control" placeholder="Enter your answer here" required>
+          			<input type="hidden" name="index"           id="index"           value={{ index }}>
+          			<input type="hidden" name="score"           id="score"           value={{ score }}>
+          			<input type="hidden" name="correct_answer"  id="correct_answer"  value={{ correct_answer }}>
+          			<input type="hidden" name="question_number" id="question_number" value={{ question_number }}>
           			</div> </br>
           			<input type="submit" class="btn btn-light btn-rounded" value="Submit Answer" />
-			     </form> 
-			      </br>
-			    <h3 Class ="text-light"> Your current score is <span> {{ score }} </span> out of 18 </h3>
-			    <p>
-				{% if username_answer != correct_answer %} 
-              	{% for incorrect in incorrect_answer %}
-               	{{ incorrect }} {{ message_incorrect }} <span style="text-decoration:underline;font-weight:bold" > {{ correct_answer }} </span> </br>
-               	{{ message_next_question }}
-               	{% endfor %}
-               	{% endif %}
-               	</p>
+			     </form> </br>
+			     
+			    <h3 Class ="text-light"> Your current score is <span> {{ score }} </span> out of 18 </h3> </br>
 			    
-    	  </div>
-        </div>
-	 </div>	
+				 {% if not check_correct %} 
+                    <h4> Your answer to <span class="text-light"> Q{{ geography1_questions[index-1] ["question_number"] }} </span> <span class="text-dark"> was incorrect </span> </br>
+               	 {% endif %}
+    	    </div>
+    	  
+         </div>
+         
+	</div>	
 	</section>	
 	
     <!-- Footer -->
