@@ -45,17 +45,16 @@
     		  	 <form method="POST">
     				<div class="input-group">
           			<input type="text"   name="username_answer" id="username_answer" class="form-control" placeholder="Enter your answer here" required>
-          			<input type="hidden" name="index"           id="index"           value={{ index }}>
-          			<input type="hidden" name="score"           id="score"           value={{ score }}>
-          			<input type="hidden" name="correct_answer"  id="correct_answer"  value={{ correct_answer }}>
-          			<input type="hidden" name="question_number" id="question_number" value={{ question_number }}>
+          			<input type="hidden" name="index"           id="index" value={{ index }}>
+          			<input type="hidden" name="score"           id="score" value={{ score }}>
+          			<input type="hidden" name="correct_answer"  id="correct_answer" value={{ correct_answer }}>
           			</div> </br>
           			<input type="submit" class="btn btn-light btn-rounded" value="Submit Answer" />
 			     </form> </br>
 			     
-			    <h3 Class ="text-light"> Your current score is <span> {{ score }} </span> out of 18 </h3> </br>
+			    <h3 Class ="text-light"> Your current score is <span> {{ score }} </span> out of {{ count_questions }} </h3> </br>
 			    
-				 {% if not check_correct %} 
+				 {% if check_correct == False %} 
                     <h4> Your answer to <span class="text-light"> Q{{ geography1_questions[index-1] ["question_number"] }} </span> <span class="text-dark"> was incorrect </span> </br>
                	 {% endif %}
     	    </div>
