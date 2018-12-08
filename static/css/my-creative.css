@@ -11,3 +11,13 @@
 .form-control {
 width: 50%;
 }
+
+/* add width of input box */
+#geography1_username {
+  max-width: 33%;
+}
+
+/* add width of input box */
+#username_answer {
+  max-width: 33%;
+}

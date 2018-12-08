@@ -19,47 +19,46 @@
     <div class="container-fluid">
          <div class="row">
 			   <div class="col-md-5 mb-5 mb-lg-0 text-center">
-    			 <h2 class="text-center text-uppercase text-dark"> {{ category }} Quiz ? </h2> </br>
-    			 <h4 class="text-center text-uppercase text-light"> How many questions do you know in {{ category }} </h4> </br>
+    			 <h2 class="text-center text-uppercase text-dark"> {{ category }} Quiz ? </h2> 
+    			 <p> <h4 class="text-center text-uppercase text-light"> How many questions do you know in {{ category }} </h4> </p>
     			 <hr class="light mb-5">
     			 <img class="rounded mx-auto img-thumbnail" src="{{ img_id }}" alt="{{ category }}"> 
-    			 </br>
-    			 <h3 class="text-center text-light"> Welcome &nbsp; <span class="text-dark"> {{ username }} </span> </h3> 
+			     <p> <h3 class="text-center text-dark"> Welcome &nbsp; <span class="text-light"> {{ username }} </span> </h3> </p> 
 			   </div>
-			   
-		       <div class="col-md-7 mb-7 mb-lg-0 text-center" id="right_column">
-    		      <h3 class ="text-dark"> Q{{ geography1_questions[index] ["question_number"] }}.&nbsp; <span class="text-light"> {{ geography1_questions[index] ["question"] }} </span> </h3>
-    		      </br>
-    		   	  <img class="rounded mx-auto img-thumbnail" src="{{ geography1_questions[index] ["image_source"] }}" alt=""geography_1_jpgs"> 
-    		   	  
-    		      <div>
-    				<h4 id="options">
-    				</br>
-    			    <span class="text-dark"> 1. <span class="text-light"> {{ geography1_questions[index]["option1"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    				<span class="text-dark"> 2. <span class="text-light"> {{ geography1_questions[index]["option2"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    				<span class="text-dark"> 3. <span class="text-light"> {{ geography1_questions[index]["option3"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    				<span class="text-dark"> 4. <span class="text-light"> {{ geography1_questions[index]["option4"] }} </span>
-    				</h4>
-    	          </div>
-    	        
-    		  	 <form method="POST">
-    				<div class="input-group">
-          			<input type="text"   name="username_answer" id="username_answer" class="form-control" placeholder="Enter your answer here" required>
-          			<input type="hidden" name="index"           id="index" value={{ index }}>
-          			<input type="hidden" name="score"           id="score" value={{ score }}>
-          			<input type="hidden" name="correct_answer"  id="correct_answer" value={{ correct_answer }}>
-          			</div> </br>
-          			<input type="submit" class="btn btn-light btn-rounded" value="Submit Answer" />
-			     </form> </br>
-			     
-			    <h3 Class ="text-light"> Your current score is <span> {{ score }} </span> out of {{ count_questions }} </h3> </br>
 			    
-				 {% if check_correct == False %} 
-                    <h4> Your answer to <span class="text-light"> Q{{ geography1_questions[index-1] ["question_number"] }} </span> <span class="text-dark"> was incorrect </span> </br>
-               	 {% endif %}
-    	    </div>
-    	  
-         </div>
+		    <div class="col-md-7 mb-7 mb-lg-0 text-center" id="right_column">
+    		   <h3 class ="text-dark"> Q{{ geography1_questions[index] ["question_number"] }}.&nbsp; <span class="text-light"> {{ geography1_questions[index] ["question"] }} </span> </h3>
+    		   <p> <img class="rounded mx-auto img-thumbnail" src="{{ geography1_questions[index] ["image_source"] }}" alt="geography_1_jpgs"> </P> 
+    		   	  
+    		   <div>
+    			 	 <p> <h4 id="options">
+    			         <span class="text-dark"> 1. <span class="text-light"> {{ geography1_questions[index]["option1"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    				     <span class="text-dark"> 2. <span class="text-light"> {{ geography1_questions[index]["option2"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    				     <span class="text-dark"> 3. <span class="text-light"> {{ geography1_questions[index]["option3"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    				     <span class="text-dark"> 4. <span class="text-light"> {{ geography1_questions[index]["option4"] }} </span>
+    				 </h4> </p>
+    				  
+    	       </div>
+    	          
+			   <form method="POST" autocomplete="off"> <!-- Disabled autocompletion -->
+    			    <p>	<div class="input-group justify-content-center">
+          			    <input type="text"   name="username_answer" id="username_answer" class="form-control" placeholder="Enter your answer here" autofocus required>
+          			    <input type="hidden" name="index"           id="index" value={{ index }}>
+          			    <input type="hidden" name="score"           id="score" value={{ score }}>
+          			    <input type="hidden" name="correct_answer"  id="correct_answer" value={{ correct_answer }}>
+                    </div> </p>
+          			<input type="submit" class="btn btn-light btn-rounded" value="Submit Answer" /> 
+			   </form> 
+			   
+			   <p> <h3 Class ="text-dark"> Your current score is <span> <span class="text-light"> {{ score }} </span> 
+			           <span class="text-dark"> out of <span class="text-light"> {{ count_questions }} </h3> </p> 
+			    
+	  {% if check_correct == False %} 
+       <p> <h4> Your answer to <span class="text-light"> Q{{ geography1_questions[index-1] ["question_number"] }} </span> <span class="text-dark"> was incorrect </span> </p>
+      {% endif %}
+    	    
+       </div>
+      </div>
          
 	</div>	
 	</section>	
