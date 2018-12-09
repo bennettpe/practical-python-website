@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-                                                          <title> Practical Python Project "GEOGRAPHY1_QUIZ.HTML" (Paul Bennett) </title>
+                                                          <title> Practical Python Project "GEOGRAPHY2_QUIZ.HTML" (Paul Bennett) </title>
     <!-- Include standard links                       --> {% include 'head.html' %}                                                       
     <!-- My Custom styles for this template           --> <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my-creative.css') }}"> 
 </head>
@@ -27,15 +27,15 @@
 			   </div>
 			    
 		    <div class="col-md-7 mb-7 mb-lg-0 text-center" id="right_column">
-    		   <h3 class ="text-dark"> Q{{ geography1_questions[index] ["question_number"] }}.&nbsp; <span class="text-light"> {{ geography1_questions[index] ["question"] }} </span> </h3>
-    		   <p> <img class="rounded mx-auto img-thumbnail" src="{{ geography1_questions[index] ["image_source"] }}" alt="geography_1_jpgs"> </P> 
+    		   <h3 class ="text-dark"> Q{{ geography2_questions[index] ["question_number"] }}.&nbsp; <span class="text-light"> {{ geography2_questions[index] ["question"] }} </span> </h3>
+    		   <p> <img class="rounded mx-auto img-thumbnail" src="{{ geography2_questions[index] ["image_source"] }}" alt="geography_2_jpgs"> </P> 
     		   	  
     		   <div>
     			 	 <p> <h4 id="options">
-    			         <span class="text-dark"> 1. <span class="text-light"> {{ geography1_questions[index]["option1"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    				     <span class="text-dark"> 2. <span class="text-light"> {{ geography1_questions[index]["option2"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    				     <span class="text-dark"> 3. <span class="text-light"> {{ geography1_questions[index]["option3"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    				     <span class="text-dark"> 4. <span class="text-light"> {{ geography1_questions[index]["option4"] }} </span>
+    			         <span class="text-dark"> 1. <span class="text-light"> {{ geography2_questions[index]["option1"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    				     <span class="text-dark"> 2. <span class="text-light"> {{ geography2_questions[index]["option2"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    				     <span class="text-dark"> 3. <span class="text-light"> {{ geography2_questions[index]["option3"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    				     <span class="text-dark"> 4. <span class="text-light"> {{ geography2_questions[index]["option4"] }} </span>
     				 </h4> </p>
     				  
     	       </div>
@@ -54,7 +54,7 @@
 			           <span class="text-dark"> out of <span class="text-light"> {{ count_questions }} </h3> </p> 
 			    
 	  {% if check_correct == False %} 
-       <p> <h4> Your answer to <span class="text-light"> Q{{ geography1_questions[index-1] ["question_number"] }} </span> <span class="text-dark"> was incorrect </span> </p>
+       <p> <h4> Your answer to <span class="text-light"> Q{{ geography2_questions[index-1] ["question_number"] }} </span> <span class="text-dark"> was incorrect </span> </p>
       {% endif %}
     	    
        </div>
