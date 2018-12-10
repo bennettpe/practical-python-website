@@ -32,6 +32,7 @@ def create_date():
     get_date = datetime.now().strftime(date_format)
     return get_date
 
+
 # ---------------------------#
 # Get last incorrect answer #
 # ---------------------------#
@@ -40,6 +41,7 @@ def get_geography_incorrect_answer(filename):
     with open(filename, 'r') as incorrect_answer:
         answers = [row for row in incorrect_answer]
         return answers[-1:]
+ 
         
 # --------------------------------#
 # Route Decorator for index.html #
@@ -99,7 +101,7 @@ def geography1_user(geography1_username):
         if request.method == 'POST':
             index = int(request.form['index'])
             score = int(request.form['score'])
-            correct_answer = request.form['correct_answer']
+            correct_answer = request.form['correct_answer'].title()
             username_answer = request.form['username_answer'].title()
 
             if username_answer == correct_answer:
@@ -113,17 +115,15 @@ def geography1_user(geography1_username):
                 score = score
                 check_correct = False
 
-            # When all questions have been answered, save final score in geography1_leaders.txt #
-
-            if request.method == 'POST':
-                if index == 18:  # Total number of questions for category
-                    write_to_file('./data/geography1/geography1_leaders.txt'
-                                  , str(todays_date) + ':'
-                                  + geography1_username + ':'
-                                  + str(count_questions) + ':'
-                                  + request.form['score'] + '\n')  
-                    write_to_file('./data/geography1/geography1_final_score.txt', request.form['score'] + '\n')  
-                    return redirect('geography1_completed_quiz')
+            # When all questions have been answered, save final score #
+            if index == count_questions:  # Total number of questions for category
+                write_to_file('./data/geography1/geography1_leaders.txt'
+                               , str(todays_date) + ':'
+                               + geography1_username + ':'
+                               + str(count_questions) + ':'
+                               + request.form['score'] + '\n')  
+                write_to_file('./data/geography1/geography1_final_score.txt', request.form['score'] + '\n')  
+                return redirect('geography1_completed_quiz')
 
     incorrect_answer = get_geography_incorrect_answer('./data/geography1/geography1_incorrect_answer.txt')
 
@@ -173,7 +173,7 @@ def geography2_user(geography2_username):
     imgname = './static/img/portfolio/thumbnails/image-from-rawpixel-id-433915.jpg'
     check_correct = []
     questions = []
-
+    
     with open(filename, 'r') as questions_file:  
         questions = json.load(questions_file)
 
@@ -191,7 +191,7 @@ def geography2_user(geography2_username):
         if request.method == 'POST':
             index = int(request.form['index'])
             score = int(request.form['score'])
-            correct_answer = request.form['correct_answer']
+            correct_answer = request.form['correct_answer'].title()
             username_answer = request.form['username_answer'].title()
 
             if username_answer == correct_answer:
@@ -205,17 +205,15 @@ def geography2_user(geography2_username):
                 score = score
                 check_correct = False
 
-            # When all questions have been answered, save final score in geography2_leaders.txt #
-
-            if request.method == 'POST':
-                if index == 18:  # Total number of questions for category
-                    write_to_file('./data/geography2/geography2_leaders.txt'
-                                  , str(todays_date) + ':'
-                                  + geography2_username + ':'
-                                  + str(count_questions) + ':'
-                                  + request.form['score'] + '\n')  
-                    write_to_file('./data/geography2/geography2_final_score.txt', request.form['score'] + '\n')  
-                    return redirect('geography2_completed_quiz')
+            # When all questions have been answered, save final score #
+            if index == count_questions:  # Total number of questions for category
+                write_to_file('./data/geography2/geography2_leaders.txt'
+                               , str(todays_date) + ':'
+                               + geography2_username + ':'
+                               + str(count_questions) + ':'
+                               + request.form['score'] + '\n')  
+                write_to_file('./data/geography2/geography2_final_score.txt', request.form['score'] + '\n')  
+                return redirect('geography2_completed_quiz')
 
     incorrect_answer = get_geography_incorrect_answer('./data/geography2/geography2_incorrect_answer.txt')
 
@@ -273,4 +271,6 @@ def highest_username():
                            img_id=image)  # Routing for highest_username.html
 
 if __name__ == '__main__': 
-    app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT')), debug=True)  
+    app.run(host=os.environ.get('IP'), 
+    port=int(os.environ.get('PORT')), 
+    debug=True)  
