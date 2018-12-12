@@ -54,7 +54,11 @@
 			           <span class="text-dark"> out of <span class="text-light"> {{ count_questions }} </h3> </p> 
 			    
 	  {% if check_correct == False %} 
-       <p> <h4> Your answer to <span class="text-light"> Q{{ geography1_questions[index-1] ["question_number"] }} </span> <span class="text-dark"> was incorrect </span> </p>
+       <p> <h4> Your answer to <span class="text-light"> Q{{ geography1_questions[index-1] ["question_number"] }} </span> 
+                               <span class="text-dark"> was incorrect </span> &nbsp; <i class="text-light fas fa-thumbs-down fa-lg"></i> </p>
+      {% elif check_correct == True %} 
+       <p> <h4> Your answer to <span class="text-light"> Q{{ geography1_questions[index-1] ["question_number"] }} </span> 
+                               <span class="text-dark"> was correct </span> &nbsp; <i class="text-light fas fa-thumbs-up fa-lg"></i> </p>
       {% endif %}
     	    
        </div>

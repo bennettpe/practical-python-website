@@ -7,8 +7,8 @@
     "option3": "Canada",
     "option4": "China",
     "answer": "Russia",
-    "answer_number":"2",
-    "image_source": "./static/images/Geography 2/480px-None_(orthographic_projection).png"
+    "answer_number": 2,
+    "image_source": "./static/images/Geography 2/None_(orthographic_projection).png"
   },
   {
     "question_number": 2,
@@ -18,8 +18,8 @@
     "option3": "Kyoto",
     "option4": "Hong Kong",
     "answer": "Hong Kong",
-    "answer_number":"4",
-    "image_source": "./static/images/Geography 2/480px-Asia_(orthographic_projection).png"
+    "answer_number": 4,
+    "image_source": "./static/images/Geography 2/Asia_(orthographic_projection).png"
   },
   {
     "question_number": 3,
@@ -29,8 +29,8 @@
     "option3": "New Mexico",
     "option4": "Nevada",
     "answer": "Nevada",
-    "answer_number":"4",
-    "image_source": "./static/images/Geography 2/480px-USA_orthographic.png"
+    "answer_number": 4,
+    "image_source": "./static/images/Geography 2/USA_orthographic.png"
   },
   {
     "question_number": 4,
@@ -40,8 +40,8 @@
     "option3": "Nigeria",
     "option4": "Indonesia",
     "answer": "Nigeria",
-    "answer_number":"3",
-    "image_source": "./static/images/Geography 2/640px-Population_density.png"
+    "answer_number": 3,
+    "image_source": "./static/images/Geography 2/Population_density.png"
   },
   {
     "question_number": 5,
@@ -51,8 +51,8 @@
     "option3": "10000",
     "option4": "100000",
     "answer": "25000",
-    "answer_number":"1",
-    "image_source": "./static/images/Geography 2/267px-Equator_sign_kenya.jpg"
+    "answer_number": 1,
+    "image_source": "./static/images/Geography 2/Equator_sign_kenya.jpg"
   },
   {
     "question_number": 6,
@@ -62,8 +62,8 @@
     "option3": "Jordan",
     "option4": "Oman",
     "answer": "Oman",
-    "answer_number":"4",
-    "image_source": "./static/images/Geography 2/640px-Muscat_Gate_Museum.jpg"
+    "answer_number": 4,
+    "image_source": "./static/images/Geography 2/Muscat_Gate_Museum.jpg"
   },
   {
     "question_number": 7,
@@ -73,8 +73,8 @@
     "option3": "Antarctica",
     "option4": "Oceania",
     "answer": "Oceania",
-    "answer_number":"4",
-    "image_source": "./static/images/Geography 2/640px-Muscat_Gate_Museum.jpg"
+    "answer_number": 4,
+    "image_source": "/static/images/Geography 2/None_(orthographic_projection).png"
   },
   {
     "question_number": 8,
@@ -84,8 +84,8 @@
     "option3": "Nepal",
     "option4": "Switzerland",
     "answer": "Nepal",
-    "answer_number":"3",
-    "image_source": "./static/images/Geography 2/394px-Flag_of_Nepal.png"
+    "answer_number": 3,
+    "image_source": "./static/images/Geography 2/Flag_of_Nepal.png"
   },
   {
     "question_number": 9,
@@ -95,8 +95,8 @@
     "option3": "Finland",
     "option4": "Denmark",
     "answer": "Norway",
-    "answer_number":"1",
-    "image_source": "./static/images/Geography 2/394px-Flag_of_Nepal.png"
+    "answer_number": 1,
+    "image_source": "/static/images/Geography 2/Nordic_countries_orthographic.png"
   },
   {
     "question_number": 10,
@@ -106,19 +106,19 @@
     "option3": "Johannesburg",
     "option4": "Pretoria",
     "answer": "Johannesburg",
-    "answer_number":"3",
+    "answer_number": 3,
     "image_source": "./static/images/Geography 2/Location_South_Africa_AU_Africa.png"
   },
   {
     "question_number": 11,
     "question": "How many islands is Japan made up of?",
-    "option1": 12852,
-    "option2": 6852,
-    "option3": 852,
-    "option4": 3852,
-    "answer": 3852,
-    "answer_number":"2",
-    "image_source": "./static/images/Geography 2/480px-Japan_(orthographic_projection).png"
+    "option1": "12852",
+    "option2": "6852",
+    "option3": "852",
+    "option4": "3852",
+    "answer":  "6852",
+    "answer_number": 2,
+    "image_source": "./static/images/Geography 2/Japan_(orthographic_projection).png"
   },
   {
     "question_number": 12,
@@ -128,19 +128,19 @@
     "option3": "Peru",
     "option4": "Chile",
     "answer": "Ecuador",
-    "answer_number":"2",
-    "image_source": "./static/images/Geography 2/480px-South_America_(orthographic_projection).png"
+    "answer_number": 2,
+    "image_source": "./static/images/Geography 2/South_America_(orthographic_projection).png"
   },
   {
     "question_number": 13,
     "question": "Which island is the easternmost member of the Antilles?",
-    "option1": "St. Vincent",
+    "option1": "St Vincent",
     "option2": "Barbados",
     "option3": "Grenada",
     "option4": "Trinidad",
     "answer": "Barbados",
-    "answer_number":"2",
-    "image_source": "./static/images/Geography 2/480px-Antillas_(orthographic_projection).png"
+    "answer_number": 2,
+    "image_source": "./static/images/Geography 2/Antillas_(orthographic_projection).png"
   },
   {
     "question_number": 14,
@@ -150,8 +150,8 @@
     "option3": "Palau",
     "option4": "Micronesia",
     "answer": "Nauru",
-    "answer_number":"1",
-    "image_source": "./static/images/Geography 2/480px-Oceania_(orthographic_projection).png"
+    "answer_number": 1,
+    "image_source": "./static/images/Geography 2/Oceania_(orthographic_projection).png"
   },
   {
     "question_number": 15,
@@ -161,8 +161,8 @@
     "option3": "Poland",
     "option4": "Armenia",
     "answer": "Armenia",
-    "answer_number":"4",
-    "image_source": "./static/images/Geography 2/480px-Russian_Federation_(orthographic_projection)_-_only_Crimea_disputed.png"
+    "answer_number": 4,
+    "image_source": "./static/images/Geography 2/Russian_Federation_(orthographic_projection)_-_only_Crimea_disputed.png"
   },
   {
     "question_number": 16,
@@ -172,8 +172,8 @@
     "option3": "Loch Tay",
     "option4": "Loch Lomond",
     "answer": "Loch Ness",
-    "answer_number":"2",
-    "image_source": "./static/images/Geography 2/365px-Scottish_clan_map.png"
+    "answer_number": 2,
+    "image_source": "./static/images/Geography 2/Scottish_clan_map.png"
   },
   {
     "question_number": 17,
@@ -181,9 +181,9 @@
     "option1": "10",
     "option2": "90",
     "option3": "50",
-    "option4": "7%",
+    "option4": "75",
     "answer": "75",
-    "answer_number":"4",
+    "answer_number": 4,
     "image_source": "./static/images/Geography 2/CAN_orthographic.png"
   },
   {
@@ -194,7 +194,7 @@
     "option3": "Transantarctics",
     "option4": "Andes",
     "answer": "Andes",
-    "answer_number":"4",
+    "answer_number": 4,
     "image_source": "./static/images/Geography 2/Aerial_photo_of_the_Andes.jpg"
   }
 ]

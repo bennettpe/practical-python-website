@@ -7,8 +7,8 @@
     "option3": "Ireland",
     "option4": "Denmark",
     "answer": "Ireland",
-    "answer_number": "3",
-    "image_source": "./static/images/Geography 1/640px-Inisheer_landscape.jpg"
+    "answer_number": 3,
+    "image_source": "./static/images/Geography 1/Inisheer_landscape.jpg"
   },
   {
     "question_number": 2,
@@ -18,8 +18,8 @@
     "option3": "Denver",
     "option4": "Dallas",
     "answer": "Phoenix",
-    "answer_number": "1",
-    "image_source": "./static/images/Geography 1/Phoenix_(4270737598).jpg"
+    "answer_number":  1,
+    "image_source": "./static/images/Geography 1/Phoenix.jpg"
   },
   {
     "question_number": 3,
@@ -29,8 +29,8 @@
     "option3": "India",
     "option4": "Austria",
     "answer": "Nepal",
-    "answer_number": "2",
-    "image_source": "./static/images/Geography 1/360px-Namche_Bazaar_Nepal.jpg"
+    "answer_number": 2,
+    "image_source": "./static/images/Geography 1/Namche_Bazaar_Nepal.jpg"
   },
   {
     "question_number": 4,
@@ -40,8 +40,8 @@
     "option3": "Vatican City",
     "option4": "Monaco",
     "answer": "Monaco",
-    "answer_number": "4",
-    "image_source": "./static/images/Geography 1/573px-Monaco_satellite_map.png"
+    "answer_number": 4,
+    "image_source": "./static/images/Geography 1/Monaco_satellite_map.png"
   },
   {
     "question_number": 5,
@@ -51,8 +51,8 @@
     "option3": "English",
     "option4": "Mandarin",
     "answer": "Mandarin",
-    "answer_number": "4",
-    "image_source": "./static/images/Geography 1/640px-Pair_of_mandarin_ducks.jpg"
+    "answer_number": 4,
+    "image_source": "./static/images/Geography 1/Pair_of_mandarin_ducks.jpg"
   },
   {
     "question_number": 6,
@@ -62,8 +62,8 @@
     "option3": "Johannesburg",
     "option4": "Cape Town",
     "answer": "Cape Town",
-    "answer_number": "4",
-    "image_source": "./static/images/Geography 1/640px-Table_Mountain_Cape_Town_South_Africa_19Mar2018_SkySat.jpg"
+    "answer_number": 4,
+    "image_source": "./static/images/Geography 1/Table_Mountain_Cape_Town_South_Africa.jpg"
   },
   {
     "question_number": 7,
@@ -73,8 +73,8 @@
     "option3": "Africa",
     "option4": "Europe",
     "answer": "Africa",
-    "answer_number": "3",
-    "image_source": "./static/images/Geography 1/640px-Bet_Giyorgis_church_Lalibela_01.jpg"
+    "answer_number": 3,
+    "image_source": "./static/images/Geography 1/Bet_Giyorgis_church_Lalibela.jpg"
   },
   {
     "question_number": 8,
@@ -84,7 +84,7 @@
     "option3": "Black",
     "option4": "Green",
     "answer": "Black",
-    "answer_number": "3",
+    "answer_number": 3,
     "image_source": "./static/images/Geography 1/Brazilian_Empire_1828_(orthographic_projection).png"
   },
   {
@@ -95,8 +95,8 @@
     "option3": "Ural",
     "option4": "Danube",
     "answer": "Volga",
-    "answer_number": "1",
-    "image_source": "./static/images/Geography 1/481px-Europe_orthographic_Caucasus_Urals_boundary_(with_borders).png"
+    "answer_number": 1,
+    "image_source": "./static/images/Geography 1/Europe_orthographic_Caucasus_Urals_boundary_(with_borders).png"
   },
   {
     "question_number": 10,
@@ -106,8 +106,8 @@
     "option3": "Kenya",
     "option4": "Morocco",
     "answer": "Algeria",
-    "answer_number": "2",
-    "image_source": "./static/images/Geography 1/640px-Bensari2.jpg"
+    "answer_number": 2,
+    "image_source": "./static/images/Geography 1/Bensari2.jpg"
   },
   {
     "question_number": 11,
@@ -117,8 +117,8 @@
     "option3": "Kyrgyzstan",
     "option4": "Myanmar",
     "answer": "Kyrgyzstan",
-    "answer_number": "3",
-    "image_source": "./static/images/Geography 1/Ala-too_Square_in_Bishkek,_Kyrgyzstan,_2007-09-11_(color-corrected).jpg"
+    "answer_number": 3,
+    "image_source": "./static/images/Geography 1/Ala-too_Square_in_Bishkek,_Kyrgyzstan.jpg"
   },
   {
     "question_number": 12,
@@ -128,8 +128,8 @@
     "option3": "Paraguay",
     "option4": "Ecuador",
     "answer": "Paraguay",
-    "answer_number": "3",
-    "image_source": "./static/images/Geography 1/446px-Andes.png"
+    "answer_number": 3,
+    "image_source": "./static/images/Geography 1/Andes.png"
   },
   {
     "question_number": 13,
@@ -139,7 +139,7 @@
     "option3": "Belize",
     "option4": "Honduras",
     "answer": "Panama",
-    "answer_number": "2",
+    "answer_number": 2,
     "image_source": "./static/images/Geography 1/Americas_(orthographic_projection).png"
   },
   {
@@ -150,8 +150,8 @@
     "option3": "Kiribati",
     "option4": "Nauru",
     "answer": "Nauru",
-    "answer_number": "4",
-    "image_source": "./static/images/Geography 1/480px-Oceania_(orthographic_projection).png"
+    "answer_number": 4,
+    "image_source": "./static/images/Geography 1/Oceania_(orthographic_projection).png"
   },
   {
     "question_number": 15,
@@ -161,8 +161,8 @@
     "option3": "Hungary",
     "option4": "Belgium",
     "answer": "Hungary",
-    "answer_number": "3",
-    "image_source": "./static/images/Geography 1/480px-EU-Germany_(orthographic_projection).png"
+    "answer_number": 3,
+    "image_source": "./static/images/Geography 1/EU-Germany_(orthographic_projection).png"
   },
   {
     "question_number": 16,
@@ -172,8 +172,8 @@
     "option3": "Wales",
     "option4": "England",
     "answer": "Northern Ireland",
-    "answer_number": "1",
-    "image_source": "./static/images/Geography 1/480px-EU-United_Kingdom_(orthographic_projection).png"
+    "answer_number": 1,
+    "image_source": "./static/images/Geography 1/EU-United_Kingdom_(orthographic_projection).png"
   },
   {
     "question_number": 17,
@@ -183,7 +183,7 @@
     "option3": "Victoria Island",
     "option4": "Ellesmere Island",
     "answer": "Baffin Island",
-    "answer_number": "2",
+    "answer_number": 2,
     "image_source": "./static/images/Geography 1/CAN_orthographic.png"
   },
   {
@@ -194,7 +194,7 @@
     "option3": "Sonoran",
     "option4": "Makalu",
     "answer": "Baikal",
-    "answer_number": "2",
-    "image_source": "./static/images/Geography 1/Saguaro_National_Park_-_Flickr_-_Joe_Parks.jpg"
+    "answer_number": 2,
+    "image_source": "./static/images/Geography 1/Saguaro_National_Park.jpg"
   }
 ]

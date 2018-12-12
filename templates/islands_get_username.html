@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Practical Python Project "ISLANDS_GET_USERNAME.HTML" (Paul Bennett) </title>
+    <!-- Include standard links             --> {% include 'head.html' %}
+    <!-- My Custom styles for this template --> <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my-creative.css') }}">
+</head>
+
+<body>
+    <!-- Bootstrap theme (Creative) downloaded from  https://github.com/BlackrockDigital/startbootstrap-creative -->
+
+    <body id="page-top">
+
+        <!-- Navigation Navbar -->
+        {% include 'navbar_username.html' %}
+
+        <section class="masthead bg-primary text-center" id="quiz_header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 text-center">
+                        <h2 class="text-center text-light"> {{ category }} Quiz ? </h2>
+                        <hr class="light mb-4">
+                        <img class="rounded mx-auto img-thumbnail" src="{{ img_id }}" alt="{{ category }}">
+                    </div>
+
+
+                    <div class="col-lg-6 col-sm-6 text-center" id="right_column">
+                        <h4 class="text-center text-light"> Please enter USERNAME to commence quiz: </h4>
+                        <form method="POST" action="/islands_get_username" autocomplete="off"> <!-- Disabled autocompletion -->
+                            <p> <div class="input-group justify-content-center">
+                             <input id="get_username" type="text" class="form-control" name="islands_username" placeholder="Enter your username here" autofocus required>  
+                            </div> </p>
+                            <input type="submit" class="btn btn-light btn-rounded" value="Submit Username" />
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Footer -->
+        {% include 'footer.html' %}
+
+        <!-- Script -->
+        {% include 'script.html' %}
+
+    </body>
+
+</html>
