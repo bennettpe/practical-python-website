@@ -47,7 +47,7 @@
     "option3": "Baku",
     "answer": "Tbilisi",
     "answer_number": 2,
-    "image_source": "./static/images/Which City Has The Highest Elevation Above Sea Level/Vista_de_Tiflis_Georgia.jpg"
+    "image_source": "./static/images/Which City Has The Highest Elevation Above Sea Level/tbilisi-georgia.jpg"
   },
   {
     "question_number": 6,
@@ -57,7 +57,7 @@
     "option3": "Sri Jayawardenepura Kotte",
     "answer": "Bengaluru",
     "answer_number": 2,
-    "image_source": "./static/images/Which City Has The Highest Elevation Above Sea Level/Bangalore_Panorama.jpg"
+    "image_source": "./static/images/Which City Has The Highest Elevation Above Sea Level/Bengaluru.jpg"
   },
   {
     "question_number": 7,
