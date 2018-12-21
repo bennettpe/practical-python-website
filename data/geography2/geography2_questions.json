@@ -1,6 +1,6 @@
 [
   {
-    "question_number": 1,
+    "question_number": "01",
     "question": "What is the largest country in the world (by area)?",
     "option1": "United States",
     "option2": "Russia",
@@ -11,7 +11,7 @@
     "image_source": "./static/images/Geography 2/None_(orthographic_projection).png"
   },
   {
-    "question_number": 2,
+    "question_number": "02",
     "question": "Which city's famous nickname is the 'Pearl of the Orient'?",
     "option1": "Singapore",
     "option2": "Taipei",
@@ -22,7 +22,7 @@
     "image_source": "./static/images/Geography 2/Asia_(orthographic_projection).png"
   },
   {
-    "question_number": 3,
+    "question_number": "03",
     "question": "Which of the following is NOT one of the 'four corners' states?",
     "option1": "Arizona",
     "option2": "Utah",
@@ -33,7 +33,7 @@
     "image_source": "./static/images/Geography 2/USA_orthographic.png"
   },
   {
-    "question_number": 4,
+    "question_number": "04",
     "question": "Which of the following countries does NOT have a population exceeding 200 million?",
     "option1": "Pakistan",
     "option2": "Brazil",
@@ -44,7 +44,7 @@
     "image_source": "./static/images/Geography 2/Population_density.png"
   },
   {
-    "question_number": 5,
+    "question_number": "05",
     "question": "To the nearest thousand miles. what is the circumference of the world at the equator?",
     "option1": "25000",
     "option2": "150000",
@@ -55,7 +55,7 @@
     "image_source": "./static/images/Geography 2/Equator_sign_kenya.jpg"
   },
   {
-    "question_number": 6,
+    "question_number": "06",
     "question": "Muscat is the capital of which country?",
     "option1": "Bahrain",
     "option2": "Yemen",
@@ -66,7 +66,7 @@
     "image_source": "./static/images/Geography 2/Muscat_Gate_Museum.jpg"
   },
   {
-    "question_number": 7,
+    "question_number": "07",
     "question": "Which is the world's smallest continent (by area)?",
     "option1": "South America",
     "option2": "Europe",
@@ -77,7 +77,7 @@
     "image_source": "/static/images/Geography 2/None_(orthographic_projection).png"
   },
   {
-    "question_number": 8,
+    "question_number": "08",
     "question": "The flag of which country is the only non-rectangular national flag?",
     "option1": "Bhutan",
     "option2": "Vatican City",
@@ -88,7 +88,7 @@
     "image_source": "./static/images/Geography 2/Flag_of_Nepal.png"
   },
   {
-    "question_number": 9,
+    "question_number": "09",
     "question": "Which of the following countries is NOT a member state of the European Union?",
     "option1": "Norway",
     "option2": "Sweden",
@@ -99,7 +99,7 @@
     "image_source": "/static/images/Geography 2/Nordic_countries_orthographic.png"
   },
   {
-    "question_number": 10,
+    "question_number": "10",
     "question": "Which is NOT a capital of South Africa?",
     "option1": "Cape Town",
     "option2": "Bloemfontein",
@@ -110,7 +110,7 @@
     "image_source": "./static/images/Geography 2/Location_South_Africa_AU_Africa.png"
   },
   {
-    "question_number": 11,
+    "question_number": "11",
     "question": "How many islands is Japan made up of?",
     "option1": "12852",
     "option2": "6852",
@@ -121,7 +121,7 @@
     "image_source": "./static/images/Geography 2/Japan_(orthographic_projection).png"
   },
   {
-    "question_number": 12,
+    "question_number": "12",
     "question": "The Galdpagos Islands form part of which South American country?",
     "option1": "Brazil",
     "option2": "Ecuador",
@@ -132,7 +132,7 @@
     "image_source": "./static/images/Geography 2/South_America_(orthographic_projection).png"
   },
   {
-    "question_number": 13,
+    "question_number": "13",
     "question": "Which island is the easternmost member of the Antilles?",
     "option1": "St Vincent",
     "option2": "Barbados",
@@ -143,7 +143,7 @@
     "image_source": "./static/images/Geography 2/Antillas_(orthographic_projection).png"
   },
   {
-    "question_number": 14,
+    "question_number": "14",
     "question": "Which country of Oceania is the smallest independent republic in the world (by area)?",
     "option1": "Nauru",
     "option2": "Kiribati",
@@ -154,7 +154,7 @@
     "image_source": "./static/images/Geography 2/Oceania_(orthographic_projection).png"
   },
   {
-    "question_number": 15,
+    "question_number": "15",
     "question": "Which of these countries does NOT border Russia?",
     "option1": "Kazakhstan",
     "option2": "North Korea",
@@ -165,7 +165,7 @@
     "image_source": "./static/images/Geography 2/Russian_Federation_(orthographic_projection)_-_only_Crimea_disputed.png"
   },
   {
-    "question_number": 16,
+    "question_number": "16",
     "question": "Which Scottish lake contains more water than all of the lakes and rivers of England and Wales combined?",
     "option1": "Loch Morar",
     "option2": "Loch Ness",
@@ -176,7 +176,7 @@
     "image_source": "./static/images/Geography 2/Scottish_clan_map.png"
   },
   {
-    "question_number": 17,
+    "question_number": "17",
     "question": "What percentage of Canadians are estimated to live within 100 miles of the US border?",
     "option1": "10",
     "option2": "90",
@@ -187,7 +187,7 @@
     "image_source": "./static/images/Geography 2/CAN_orthographic.png"
   },
   {
-    "question_number": 18,
+    "question_number": "18",
     "question": "What is the longest mountain range in the world?",
     "option1": "Himalayas",
     "option2": "Rockies",

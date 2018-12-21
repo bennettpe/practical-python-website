@@ -9,7 +9,7 @@
 
 /* add vertical border */
 .form-control {
-width: 50%;
+  width: 50%;
 }
 
 /* add width of input box */
@@ -20,4 +20,15 @@ width: 50%;
 /* add width of input box */
 #username_answer {
   max-width: 33%;
+}
+
+/* centre table in page */
+table {
+  margin: 0 auto;
+}
+
+ul {
+  margin-top: 10px;
+  padding-bottom: 0;
+  padding-top: 0;
 }

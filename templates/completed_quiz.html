@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+                                                <title> Practical Python Project "COMPLETED_QUIZ.HTML" (Paul Bennett) </title>
+    <!-- Include standard links             --> {% include 'head.html' %}
+    <!-- My Custom styles for this template --> <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my-creative.css') }}">
+</head>
+
+<body>
+    <!-- Bootstrap theme (Creative) downloaded from  https://github.com/BlackrockDigital/startbootstrap-creative -->
+
+    <body id="page-top">
+
+    <!-- Navigation Navbar -->
+    {% include 'navbar_quiz.html' %}
+
+        <section class="masthead bg-primary text-center" id="quiz_header">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-5 mb-5 mb-lg-0 text-center">
+                        <h2 class="text-center text-uppercase text-dark"> {{ category }} Quiz ? </h2>
+                        <p> <h4 class="text-center text-light"> How many questions did you know ? </h4> </p>
+                        <hr class="light mb-5">
+                        <img class="rounded mx-auto img-thumbnail" src="{{ img_id }}" alt="{{ category }}">
+                    </div>
+
+                    <div class="col-md-7 mb-7 mb-lg-0 text-center" id="right_column">
+                        <p> <h2 class="text-center text-dark"> Hi <span class="text-light"> {{ final_username }} </span> </h2> </p>
+                        <p> <h3 class="text-dark">        You got <span class="text-light"> {{ final_score }} </span>
+                          <span class="text-dark">         out of <span class="text-light"> {{ final_count }} </h3> </p> 
+                    
+                    <p> <table class="table-bordered" style="width:50%">
+                        <thead>
+                            <tr>
+                              <th> Correct Answers   </th>
+                              <th> Incorrect Answers </th>
+                            </tr>
+                        </thead> 
+                        
+                        <tbody class="text-justify">
+                            <tr>
+                            <td> {% for item in correct_answers|dictsort %}
+                                  <ul> {{item[0]}} - <span class="text-light"> {{item[1]}} </span> </ul>
+                                 {% endfor %} </td>
+                            <td> {% for item in incorrect_answers|dictsort %}
+                                  <ul> {{item[0]}} - <span class="text-light"> {{item[1]}} </span> </ul>
+                                 {% endfor %} </td>
+                            </tr>
+                        </tbody>    
+                    </table> </p>
+                    
+        	    </div>	
+        	</div>
+ 	    </section>	
+	
+    <!-- Footer -->
+    {% include 'footer.html' %}
+    
+    <!-- Script -->
+    {% include 'script.html' %} 
+</body>
+ 
+</html>

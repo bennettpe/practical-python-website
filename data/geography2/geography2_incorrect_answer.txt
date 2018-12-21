@@ -1,0 +1,14 @@
+Q01:D
+Q02:A
+Q03:A
+Q06:Yemen
+Q07:Europe
+Q09:Sweden
+Q10:S
+Q11:18282
+Q12:Perue
+Q13:Trinidad
+Q14:Palau
+Q15:Poland
+Q17:10
+Q18:Rockies

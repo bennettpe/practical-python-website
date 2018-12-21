@@ -19,8 +19,30 @@ def create_date():
     date_format = '%d/%m/%y'
     get_date = datetime.now().strftime(date_format)
     return get_date
+
+
+# ---------------------------------------#
+# Split answer file function            #
+# Create dict and split into key, value #
+# ---------------------------------------#  
+def split_answer_file(filename):
+    answers = {} # create dict
+    with open(filename,"r") as file:
+        for line in file.readlines():
+           splitdata = line.split(":") 
+           answers[splitdata[0]] = splitdata[1].strip() 
+    return answers
+  
     
-    
+# -------------------------#
+# Reading a file function #
+# -------------------------#    
+def read_from_file(filename):
+	with open(filename,"r") as file:
+		data = file.readlines()
+		return data
+
+		
 # --------------------------#
 # Writing to file function #
 # --------------------------#
@@ -28,7 +50,16 @@ def write_to_file(filename, data):
     with open(filename, 'a') as file:
         file.writelines(data)    
 
-
+        
+# ------------------------------------------------------#
+# Get last username,number of questions,score function #
+# ------------------------------------------------------#
+def get_last_line(filename):  
+    with open(filename, 'r') as file:
+        last_line = file.readlines()[-1]  
+        return last_line
+ 
+        
 app = Flask(__name__)
 # Key generated from Secretkey.py
 app.secret_key = "b'\xa0\xba+\xe5\xaa\x8b\xac\x01\x96\x1f<)86\x84\x04" 
@@ -126,7 +157,7 @@ def capitals_user(capitals_username):
 @app.route('/geography1_get_username', methods=['GET', 'POST'])
 def geography1_get_username():
 
-    catname  = 'Geography 1'
+    catname  = 'Geography1'
     imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg'
 
     if request.method == 'POST':
@@ -145,7 +176,7 @@ def geography1_get_username():
 @app.route('/geography1_user<geography1_username>', methods=['GET', 'POST'])
 def geography1_user(geography1_username):
 
-    catname  = 'Geography 1'
+    catname  = 'Geography1'
     imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg'
     check_correct = []
     questions = []
@@ -183,9 +214,7 @@ def geography1_user(geography1_username):
                                + geography1_username + ':'
                                + str(count_questions) + ':'
                                + request.form['score'] + '\n')  
-                return redirect('geography1_completed_quiz')
-
-
+                return redirect(url_for('geography1_completed_quiz', category = catname, img_id = imgname))
     return render_template('geography1_quiz.html',
                             category = catname,
                             img_id = imgname,
@@ -196,9 +225,44 @@ def geography1_user(geography1_username):
                             correct_answer = questions[index]['answer'],
                             count_questions = count_questions,
                             username = geography1_username
-                           )
-
+                          )
                            
+                           
+# --------------------------------------------#
+# Read   geography1_leaders.txt file         #
+#        geography1_correct_answer.txt       #
+#        geography1_incorrect_answer.txt     #
+# Render geography1_quiz_completed.html page #
+# --------------------------------------------#
+@app.route('/geography1_completed_quiz', methods=['GET', 'POST'])
+def geography1_completed_quiz():  
+    
+    catname  = 'Geography1'
+    imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg'
+    final_count    = []
+    final_date     = []
+    final_score    = []
+    final_username = []
+    last_line      = get_last_line('./data/geography1/geography1_leaders.txt') 
+    final_date     = last_line.split(':')[0]
+    final_username = last_line.split(':')[1]
+    final_count    = last_line.split(':')[2]
+    final_score    = last_line.split(':')[3]
+    
+    correct_answers   = split_answer_file('./data/geography1/geography1_correct_answer.txt')
+    incorrect_answers = split_answer_file('./data/geography1/geography1_incorrect_answer.txt')
+     
+    return render_template("completed_quiz.html", 
+                            category = catname,
+                            img_id = imgname,
+                            final_count = final_count, 
+                            final_score = final_score, 
+                            incorrect_answers = incorrect_answers, 
+                            correct_answers = correct_answers, 
+                            final_username = final_username
+                          )
+                          
+                          
 # --------------------------------------#
 # Get Username for geography2 category #
 # --------------------------------------#
@@ -224,7 +288,7 @@ def geography2_get_username():
 @app.route('/geography2_user<geography2_username>', methods=['GET', 'POST'])
 def geography2_user(geography2_username):
 
-    catname  = 'Geography 2'
+    catname  = 'Geography2'
     imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-433915.jpg'
     check_correct = []
     questions = []
@@ -277,6 +341,42 @@ def geography2_user(geography2_username):
                             username = geography2_username
                            )
 
+
+# --------------------------------------------#
+# Read   geography2_leaders.txt file         #
+#        geography2_correct_answer.txt       #
+#        geography2_incorrect_answer.txt     #
+# Render geography2_quiz_completed.html page #
+# --------------------------------------------#
+@app.route('/geography2_completed_quiz', methods=['GET', 'POST'])
+def geography2_completed_quiz():  
+    
+    catname  = 'Geography2'
+    imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-433915.jpg'
+    final_count    = []
+    final_date     = []
+    final_score    = []
+    final_username = []
+    last_line      = get_last_line('./data/geography2/geography2_leaders.txt') 
+    final_date     = last_line.split(':')[0]
+    final_username = last_line.split(':')[1]
+    final_count    = last_line.split(':')[2]
+    final_score    = last_line.split(':')[3]
+    
+    correct_answers   = split_answer_file('./data/geography2/geography2_correct_answer.txt')
+    incorrect_answers = split_answer_file('./data/geography2/geography2_incorrect_answer.txt')
+     
+    return render_template("completed_quiz.html", 
+                            category = catname,
+                            img_id = imgname,
+                            final_count = final_count, 
+                            final_score = final_score, 
+                            incorrect_answers = incorrect_answers, 
+                            correct_answers = correct_answers, 
+                            final_username = final_username
+                          )
+                          
+                          
 # -----------------------------------#
 # Get Username for highest category #
 # -----------------------------------#
