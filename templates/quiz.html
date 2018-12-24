@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-                                                          <title> Practical Python Project "CAPITIALS_QUIZ.HTML" (Paul Bennett) </title>
+                                                          <title> Practical Python Project "QUIZ.HTML" (Paul Bennett) </title>
     <!-- Include standard links                       --> {% include 'head.html' %}                                                       
     <!-- My Custom styles for this template           --> <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my-creative.css') }}"> 
 </head>
@@ -20,22 +20,22 @@
          <div class="row">
 			   <div class="col-md-5 mb-5 mb-lg-0 text-center">
     			 <h2 class="text-center text-uppercase text-dark"> {{ category }} Quiz ? </h2> 
-    			 <p> <h4 class="text-center text-light"> Can you choose the capital that is NOT on the given continent </h4> </p>
+    			 <p> <h4 class="text-center text-light"> {{ category_text }} </h4> </p>
     			 <hr class="light mb-5">
     			 <img class="rounded mx-auto img-thumbnail" src="{{ img_id }}" alt="{{ category }}"> 
 			     <p> <h3 class="text-center text-dark"> Welcome &nbsp; <span class="text-light"> {{ username }} </span> </h3> </p> 
 			   </div>
 			    
 		    <div class="col-md-7 mb-7 mb-lg-0 text-center" id="right_column">
-    		   <h3 class ="text-dark"> Q{{ capitals_questions[index] ["question_number"] }}.&nbsp; <span class="text-light"> {{ capitals_questions[index] ["question"] }} </span> </h3>
-    		   <p> <img class="rounded mx-auto img-thumbnail" src="{{ capitals_questions[index] ["image_source"] }}" alt="capitals_jpgs"> </P> 
+    		   <h3 class ="text-dark"> Q{{ questions[index] ["question_number"] }}.&nbsp; <span class="text-light"> {{ questions[index] ["question"] }} </span> </h3>
+    		   <p> <img class="rounded mx-auto img-thumbnail" src="{{ questions[index] ["image_source"] }}" alt="quiz_jpgs"> </P> 
     		   	  
     		   <div>
     			 	 <p> <h4 id="options">
-    			         <span class="text-dark"> 1. <span class="text-light"> {{ capitals_questions[index]["option1"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    				     <span class="text-dark"> 2. <span class="text-light"> {{ capitals_questions[index]["option2"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    				     <span class="text-dark"> 3. <span class="text-light"> {{ capitals_questions[index]["option3"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    				     <span class="text-dark"> 4. <span class="text-light"> {{ capitals_questions[index]["option4"] }} </span>
+    			         <span class="text-dark"> 1. <span class="text-light"> {{ questions[index]["option1"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    				     <span class="text-dark"> 2. <span class="text-light"> {{ questions[index]["option2"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    				     <span class="text-dark"> 3. <span class="text-light"> {{ questions[index]["option3"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    				     <span class="text-dark"> 4. <span class="text-light"> {{ questions[index]["option4"] }} </span>
     				 </h4> </p>
     				  
     	       </div>
@@ -54,10 +54,10 @@
 			           <span class="text-dark"> out of <span class="text-light"> {{ count_questions }} </h4> </p> 
 			    
 	  {% if check_correct == False %} 
-       <p> <h4> Your answer to <span class="text-light"> Q{{ capitals_questions[index-1] ["question_number"] }} </span> 
+       <p> <h4> Your answer to <span class="text-light"> Q{{ questions[index-1] ["question_number"] }} </span> 
                                <span class="text-dark"> was incorrect </span> &nbsp; <i class="text-light fas fa-thumbs-down fa-lg"></i> </p>
       {% elif check_correct == True %} 
-       <p> <h4> Your answer to <span class="text-light"> Q{{ capitals_questions[index-1] ["question_number"] }} </span> 
+       <p> <h4> Your answer to <span class="text-light"> Q{{ questions[index-1] ["question_number"] }} </span> 
                                <span class="text-dark"> was correct </span> &nbsp; <i class="text-light fas fa-thumbs-up fa-lg"></i> </p>
       {% endif %}
     	    

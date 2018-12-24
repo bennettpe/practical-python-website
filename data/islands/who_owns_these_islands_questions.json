@@ -1,6 +1,6 @@
 [
   {
-    "question_number": 1,
+    "question_number": "01",
     "question": "Guam",
     "option1": "Fiji",
     "option2": "Australia",
@@ -11,7 +11,7 @@
     "image_source": "./static/images/Who Owns These Islands/Flag_of_Guam.png"
   },
   {
-    "question_number": 2,
+    "question_number": "02",
     "question": "Easter Island",
     "option1": "Panama",
     "option2": "Peru",
@@ -22,7 +22,7 @@
     "image_source": "./static/images/Who Owns These Islands/Flag_of_Rapa_Nui,_Chile.png"
   },
   {
-    "question_number": 3,
+    "question_number": "03",
     "question": "Tahiti",
     "option1": "New Zealand",
     "option2": "France",
@@ -33,7 +33,7 @@
     "image_source": "./static/images/Who Owns These Islands/Flag_of_French_Polynesia.png"
   },
   {
-    "question_number": 4,
+    "question_number": "04",
     "question": "Christmas Island",
     "option1": "Australia",
     "option2": "Indonesia",
@@ -44,7 +44,7 @@
     "image_source": "./static/images/Who Owns These Islands/Flag_of_Christmas_Island.png"
   },
   {
-    "question_number": 5,
+    "question_number": "05",
     "question": "Crete",
     "option1": "Turkey",
     "option2": "Ukraine",
@@ -55,7 +55,7 @@
     "image_source": "./static/images/Who Owns These Islands/Flag_of_Cretan_State.png"
   },
   {
-    "question_number": 6,
+    "question_number": "06",
     "question": "Aruba",
     "option1": "Netherlands",
     "option2": "Venezuela",
@@ -66,7 +66,7 @@
     "image_source": "./static/images/Who Owns These Islands/Flag_of_Aruba.png"
   },
   {
-    "question_number": 7,
+    "question_number": "07",
     "question": "Galapagos Islands",
     "option1": "Argentina",
     "option2": "Peru",
@@ -77,7 +77,7 @@
     "image_source": "./static/images/Who Owns These Islands/Bandera_Provincia_Galápagos.png"
   },
   {
-    "question_number": 8,
+    "question_number": "08",
     "question": "Zanzibar",
     "option1": "Kenya",
     "option2": "Egypt",
@@ -88,7 +88,7 @@
     "image_source": "./static/images/Who Owns These Islands/Flag_of_Zanzibar.png"
   },
   {
-    "question_number": 9,
+    "question_number": "09",
     "question": "Nicobar Islands",
     "option1": "Sri Lanka",
     "option2": "India",
@@ -99,7 +99,7 @@
     "image_source": "./static/images/Who Owns These Islands/Seal_of_Andaman_and_Nicobar_Islands.png"
   },
   {
-    "question_number": 10,
+    "question_number": "10",
     "question": "Socotra",
     "option1": "Somalia",
     "option2": "Eritrea",
@@ -110,7 +110,7 @@
     "image_source": "./static/images/Who Owns These Islands/Flag_of_Mahraflag.png"
   },
   {
-    "question_number": 11,
+    "question_number": "11",
     "question": "Cape Breton Island",
     "option1": "Russia",
     "option2": "Denmark",
@@ -121,7 +121,7 @@
     "image_source": "./static/images/Who Owns These Islands/Flag_of_ Cape_Breton_Island_flag_1997.png"
   },
   {
-    "question_number": 12,
+    "question_number": "12",
     "question": "Bioko",
     "option1": "Nigeria",
     "option2": "Equatorial Guinea",
@@ -132,7 +132,7 @@
     "image_source": "./static/images/Who Owns These Islands/Bubi_tribal_flag.png"
   },
   {
-    "question_number": 13,
+    "question_number": "13",
     "question": "Faroe Islands",
     "option1": "United Kingdom",
     "option2": "Denmark",
@@ -143,7 +143,7 @@
     "image_source": "./static/images/Who Owns These Islands/Flag_of_the_Faroe_Islands.png"
   },
   {
-    "question_number": 14,
+    "question_number": "14",
     "question": "Qeshm",
     "option1": "Iran",
     "option2": "Iraq",
@@ -154,7 +154,7 @@
     "image_source": "./static/images/Who Owns These Islands/Flag_of_qeshm.png"
   },
   {
-    "question_number": 15,
+    "question_number": "15",
     "question": "Hainan",
     "option1": "China",
     "option2": "Japan",
@@ -165,7 +165,7 @@
     "image_source": "./static/images/Who Owns These Islands/Flag_of_hainan.png"
   },
   {
-    "question_number": 16,
+    "question_number": "16",
     "question": "Niue",
     "option1": "France",
     "option2": "Germany",
@@ -176,7 +176,7 @@
     "image_source": "./static/images/Who Owns These Islands/Flag of Niue.png"
   },
   {
-    "question_number": 17,
+    "question_number": "17",
     "question": "Java",
     "option1": "Thailand",
     "option2": "Malaysia",
@@ -187,7 +187,7 @@
     "image_source": "./static/images/Who Owns These Islands/Flag_of_Indonesia.png"
   },
   {
-    "question_number": 18,
+    "question_number": "18",
     "question": "Azores",
     "option1": "Italy",
     "option2": "Spain",
@@ -198,7 +198,7 @@
     "image_source": "./static/images/Who Owns These Islands/Flag_of_the_Azores.png"
   },
   {
-    "question_number": 19,
+    "question_number": "19",
     "question": "Canary Islands",
     "option1": "Mexico",
     "option2": "Spain",
@@ -209,7 +209,7 @@
     "image_source": "./static/images/Who Owns These Islands/Flag_of_the_Canary_Islands.png"
   },
   {
-    "question_number": 20,
+    "question_number": "20",
     "question": "Sicily",
     "option1": "France",
     "option2": "Greece",

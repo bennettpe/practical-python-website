@@ -1,6 +1,6 @@
 [
   {
-    "question_number": 1,
+    "question_number": "01",
     "question": "North America",
     "option1": "Santo Domingo",
     "option2": "Santiago",
@@ -12,7 +12,7 @@
     "image_source": "./static/images/Odd One Out Captitals/Location_North_America.png"
   },
   {
-    "question_number": 2,
+    "question_number": "02",
     "question": "Oceania",
     "option1": "Port Vila",
     "option2": "Honiara",
@@ -24,7 +24,7 @@
     "image_source": "./static/images/Odd One Out Captitals/Oceania_(orthographic_projection).png"
   },
   {
-    "question_number": 3,
+    "question_number": "03",
     "question": "Asia",
     "option1": "Astana",
     "option2": "Asmara",
@@ -36,7 +36,7 @@
     "image_source": "./static/images/Odd One Out Captitals/Asia_(orthographic_projection).png"
   },
   {
-    "question_number": 4,
+    "question_number": "04",
     "question": "Oceania",
     "option1": "Port Moresby",
     "option2": "Maputo",
@@ -48,7 +48,7 @@
     "image_source": "./static/images/Odd One Out Captitals/Oceania_(orthographic_projection).png"
   },
   {
-    "question_number": 5,
+    "question_number": "05",
     "question": "South America",
     "option1": "Luanda",
     "option2": "Paramaribo",
@@ -60,7 +60,7 @@
     "image_source": "./static/images/Odd One Out Captitals/South_America_(orthographic_projection).png"
   },
   {
-    "question_number": 6,
+    "question_number": "06",
     "question": "Europe",
     "option1": "Vientiane",
     "option2": "Valletta",
@@ -72,7 +72,7 @@
     "image_source": "./static/images/Odd One Out Captitals/Europe_orthographic_Caucasus_Urals_boundary_(with_borders).png"
   },
   {
-    "question_number": 7,
+    "question_number": "07",
     "question": "Oceania",
     "option1": "Suva",
     "option2": "Palikir",
@@ -84,7 +84,7 @@
     "image_source": "./static/images/Odd One Out Captitals/Oceania_(orthographic_projection).png"
   },
   {
-    "question_number": 8,
+    "question_number": "08",
     "question": "Africa",
     "option1": "Ouagadougou",
     "option2": "Yerevan",
@@ -96,7 +96,7 @@
     "image_source": "./static/images/Odd One Out Captitals/Africa_(orthographic_projection).png"
   },
   {
-    "question_number": 9,
+    "question_number": "09",
     "question": "Africa",
     "option1": "Abuja",
     "option2": "Praia",
@@ -108,7 +108,7 @@
     "image_source": "./static/images/Odd One Out Captitals/Africa_(orthographic_projection).png"
   },
   {
-    "question_number": 10,
+    "question_number": "10",
     "question": "South America",
     "option1": "Caracas",
     "option2": "Buenos Aires",
@@ -120,7 +120,7 @@
     "image_source": "./static/images/Odd One Out Captitals/South_America_(orthographic_projection).png"
   },
   {
-    "question_number": 11,
+    "question_number": "11",
     "question": "North America",
     "option1": "Managua",
     "option2": "Bissau",
@@ -132,7 +132,7 @@
     "image_source": "./static/images/Odd One Out Captitals/Location_North_America.png"
   },
   {
-    "question_number": 12,
+    "question_number": "12",
     "question": "Europe",
     "option1": "Tripoli",
     "option2": "Ljubljana",
@@ -144,7 +144,7 @@
     "image_source": "./static/images/Odd One Out Captitals/Europe_orthographic_Caucasus_Urals_boundary_(with_borders).png"
   },
   {
-    "question_number": 13,
+    "question_number": "13",
     "question": "Africa",
     "option1": "Conakry",
     "option2": "Khartoum",
@@ -156,7 +156,7 @@
     "image_source": "./static/images/Odd One Out Captitals/Africa_(orthographic_projection).png"
   },
   {
-    "question_number": 14,
+    "question_number": "14",
     "question": "North America",
     "option1": "Kingston",
     "option2": "Port of Spain",
@@ -168,7 +168,7 @@
     "image_source": "./static/images/Odd One Out Captitals/Location_North_America.png"
   },
   {
-    "question_number": 15,
+    "question_number": "15",
     "question": "Asia",
     "option1": "Pyongyang",
     "option2": "Tashkent",
@@ -180,7 +180,7 @@
     "image_source": "./static/images/Odd One Out Captitals/Asia_(orthographic_projection).png"
   },
   {
-    "question_number": 16,
+    "question_number": "16",
     "question": "South America",
     "option1": "Lome",
     "option2": "Georgetown",
@@ -192,7 +192,7 @@
     "image_source": "./static/images/Odd One Out Captitals/South_America_(orthographic_projection).png"
   },
   {
-    "question_number": 17,
+    "question_number": "17",
     "question": "Asia",
     "option1": "Suva",
     "option2": "Sri Jayawardenepura Kotte",
@@ -204,7 +204,7 @@
     "image_source": "./static/images/Odd One Out Captitals/Asia_(orthographic_projection).png"
   },
   {
-    "question_number": 18,
+    "question_number": "18",
     "question": "Europe",
     "option1": "Dublin",
     "option2": "Lisbon",

@@ -56,16 +56,8 @@ def write_to_file(filename, data):
 # ------------------------------------------------------#
 def get_last_line(filename):  
     with open(filename, 'r') as file:
-         last_line = file.readlines()[-1]  
-         last_count    = []
-         last_date     = []
-         last_score    = []
-         last_username = []
-         last_date     = last_line.split(':')[0]
-         last_username = last_line.split(':')[1]
-         last_count    = last_line.split(':')[2]
-         last_score    = last_line.split(':')[3]
-         return last_count, last_date, last_score, last_username
+        last_line = file.readlines()[-1]  
+        return last_line
  
         
 app = Flask(__name__)
@@ -175,18 +167,27 @@ def capitals_completed_quiz():
     catname  = 'Odd One Out Capitals'
     imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-442135.jpg'
     
-    last_count, last_date, last_score, last_username = get_last_line('./data/capitals/capitals_leaders.txt') 
+    final_count    = []
+    final_date     = []
+    final_score    = []
+    final_username = []
+    
+    final_date     = last_line.split(':')[0]
+    final_username = last_line.split(':')[1]
+    final_count    = last_line.split(':')[2]
+    final_score    = last_line.split(':')[3]
+    
     correct_answers   = split_answer_file('./data/capitals/capitals_correct_answer.txt')
     incorrect_answers = split_answer_file('./data/capitals/capitals_incorrect_answer.txt')
      
     return render_template("completed_quiz.html", 
                             category = catname,
                             img_id = imgname,
-                            last_count = last_count, 
-                            last_score = last_score, 
+                            final_count = final_count, 
+                            final_score = final_score, 
                             incorrect_answers = incorrect_answers, 
                             correct_answers = correct_answers, 
-                            last_username = last_username
+                            final_username = final_username
                           )
                           
                                                      
@@ -256,7 +257,6 @@ def geography1_user(geography1_username):
                                + str(count_questions) + ':'
                                + str(score) + '\n') 
                 return redirect(url_for('geography1_completed_quiz', category = catname, img_id = imgname))
-                
     return render_template('quiz.html',
                             category = catname,
                             category_text = cattext,
@@ -283,19 +283,27 @@ def geography1_completed_quiz():
     
     catname  = 'Geography1'
     imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg'
-  
-    last_count, last_date, last_score, last_username = get_last_line('./data/geography1/geography1_leaders.txt') 
+    final_count    = []
+    final_date     = []
+    final_score    = []
+    final_username = []
+    last_line      = get_last_line('./data/geography1/geography1_leaders.txt') 
+    final_date     = last_line.split(':')[0]
+    final_username = last_line.split(':')[1]
+    final_count    = last_line.split(':')[2]
+    final_score    = last_line.split(':')[3]
+    
     correct_answers   = split_answer_file('./data/geography1/geography1_correct_answer.txt')
     incorrect_answers = split_answer_file('./data/geography1/geography1_incorrect_answer.txt')
      
     return render_template("completed_quiz.html", 
                             category = catname,
                             img_id = imgname,
-                            last_count = last_count, 
-                            last_score = last_score, 
+                            final_count = final_count, 
+                            final_score = final_score, 
                             incorrect_answers = incorrect_answers, 
                             correct_answers = correct_answers, 
-                            last_username = last_username
+                            final_username = final_username
                           )
                           
                           
@@ -366,6 +374,7 @@ def geography2_user(geography2_username):
                                + str(score) + '\n') 
                 return redirect('geography2_completed_quiz')
 
+
     return render_template('quiz.html',
                             category = catname,
                             category_text = cattext,
@@ -391,19 +400,27 @@ def geography2_completed_quiz():
     
     catname  = 'Geography2'
     imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-433915.jpg'
+    final_count    = []
+    final_date     = []
+    final_score    = []
+    final_username = []
+    last_line      = get_last_line('./data/geography2/geography2_leaders.txt') 
+    final_date     = last_line.split(':')[0]
+    final_username = last_line.split(':')[1]
+    final_count    = last_line.split(':')[2]
+    final_score    = last_line.split(':')[3]
     
-    last_count, last_date, last_score, last_username = get_last_line('./data/geography2/geography2_leaders.txt') 
     correct_answers   = split_answer_file('./data/geography2/geography2_correct_answer.txt')
     incorrect_answers = split_answer_file('./data/geography2/geography2_incorrect_answer.txt')
      
     return render_template("completed_quiz.html", 
                             category = catname,
                             img_id = imgname,
-                            last_count = last_count, 
-                            last_score = last_score, 
+                            final_count = final_count, 
+                            final_score = final_score, 
                             incorrect_answers = incorrect_answers, 
                             correct_answers = correct_answers, 
-                            last_username = last_username
+                            final_username = final_username
                           )
                           
                           
@@ -474,6 +491,7 @@ def highest_user(highest_username):
                                + str(score) + '\n') 
                 return redirect('highest_completed_quiz')
 
+
     return render_template('quiz.html',
                             category = catname,
                             category_text = cattext,
@@ -499,19 +517,27 @@ def highest_completed_quiz():
     
     catname  = 'Highest'
     imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-431844.jpg'
+    final_count    = []
+    final_date     = []
+    final_score    = []
+    final_username = []
+    last_line      = get_last_line('./data/highest/highest_leaders.txt') 
+    final_date     = last_line.split(':')[0]
+    final_username = last_line.split(':')[1]
+    final_count    = last_line.split(':')[2]
+    final_score    = last_line.split(':')[3]
     
-    last_count, last_date, last_score, last_username = get_last_line('./data/highest/highest_leaders.txt') 
     correct_answers   = split_answer_file('./data/highest/highest_correct_answer.txt')
     incorrect_answers = split_answer_file('./data/highest/highest_incorrect_answer.txt')
      
     return render_template("completed_quiz.html", 
                             category = catname,
                             img_id = imgname,
-                            last_count = last_count, 
-                            last_score = last_score, 
+                            final_count = final_count, 
+                            final_score = final_score, 
                             incorrect_answers = incorrect_answers, 
                             correct_answers = correct_answers, 
-                            last_username = last_username
+                            final_username = final_username
                           )
                           
                                                            
@@ -582,6 +608,7 @@ def islands_user(islands_username):
                                + str(score) + '\n') 
                 return redirect('islands_completed_quiz')
 
+
     return render_template('quiz.html',
                             category = catname,
                             category_text = cattext,
@@ -607,19 +634,27 @@ def islands_completed_quiz():
     
     catname  = 'Islands'
     imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-424508.jpg'
+    final_count    = []
+    final_date     = []
+    final_score    = []
+    final_username = []
+    last_line      = get_last_line('./data/islands/islands_leaders.txt') 
+    final_date     = last_line.split(':')[0]
+    final_username = last_line.split(':')[1]
+    final_count    = last_line.split(':')[2]
+    final_score    = last_line.split(':')[3]
     
-    last_count, last_date, last_score, last_username = get_last_line('./data/islands/islands_leaders.txt') 
     correct_answers   = split_answer_file('./data/islands/islands_correct_answer.txt')
     incorrect_answers = split_answer_file('./data/islands/islands_incorrect_answer.txt')
      
     return render_template("completed_quiz.html", 
                             category = catname,
                             img_id = imgname,
-                            last_count = last_count, 
-                            last_score = last_score, 
+                            final_count = final_count, 
+                            final_score = final_score, 
                             incorrect_answers = incorrect_answers, 
                             correct_answers = correct_answers, 
-                            last_username = last_username
+                            final_username = final_username
                           )
                           
                           
@@ -690,11 +725,12 @@ def populous_user(populous_username):
                                + str(score) + '\n') 
                 return redirect('populous_completed_quiz')
 
+
     return render_template('quiz.html',
                             category = catname,
                             category_text = cattext,
                             img_id = imgname,
-                            questions = questions,
+                            populous_questions = questions,
                             index = index,
                             score = score,
                             check_correct = check_correct,
@@ -714,20 +750,29 @@ def populous_completed_quiz():
     
     catname  = 'Populous'
     imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-424508.jpg'
+    final_count    = []
+    final_date     = []
+    final_score    = []
+    final_username = []
+    last_line      = get_last_line('./data/populous/populous_leaders.txt') 
+    final_date     = last_line.split(':')[0]
+    final_username = last_line.split(':')[1]
+    final_count    = last_line.split(':')[2]
+    final_score    = last_line.split(':')[3]
     
-    last_count, last_date, last_score, last_username = get_last_line('./data/populous/populous_leaders.txt') 
     correct_answers   = split_answer_file('./data/populous/populous_correct_answer.txt')
     incorrect_answers = split_answer_file('./data/populous/populous_incorrect_answer.txt')
      
     return render_template("completed_quiz.html", 
                             category = catname,
                             img_id = imgname,
-                            last_count = last_count, 
-                            last_score = last_score, 
+                            final_count = final_count, 
+                            final_score = final_score, 
                             incorrect_answers = incorrect_answers, 
                             correct_answers = correct_answers, 
-                            last_username = last_username
+                            final_username = final_username
                           )
+                          
                           
 if __name__ == '__main__': 
     app.run(host=os.environ.get('IP'), 

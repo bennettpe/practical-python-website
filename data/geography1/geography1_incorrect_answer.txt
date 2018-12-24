@@ -1,7 +1,1 @@
-Q10:Sudan
-Q11:Kazakhstan
-Q12:Bolivia
-Q13:Belize
-Q16:Wales
-Q17:New
-Q18:Mke
+Q01:Denmark

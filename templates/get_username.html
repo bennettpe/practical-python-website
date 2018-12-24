@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title> Practical Python Project "POPULOUS_GET_USERNAME.HTML" (Paul Bennett) </title>
+    <title> Practical Python Project "GET_USERNAME.HTML" (Paul Bennett) </title>
     <!-- Include standard links             --> {% include 'head.html' %}
     <!-- My Custom styles for this template --> <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my-creative.css') }}">
 </head>
@@ -27,9 +28,9 @@
 
                     <div class="col-lg-6 col-sm-6 text-center" id="right_column">
                         <h4 class="text-center text-light"> Please enter USERNAME to commence quiz: </h4>
-                        <form method="POST" action="/populous_get_username" autocomplete="off"> <!-- Disabled autocompletion -->
+                             <form method="POST" action="{{ url_id }}" autocomplete="off"> <!-- Disabled autocompletion --> 
                             <p> <div class="input-group justify-content-center">
-                             <input id="get_username" type="text" class="form-control" name="populous_username" placeholder="Enter your username here" autofocus required>  
+                             <input id="get_username" type="text" class="form-control" name="get_username" placeholder="Enter your username here" autofocus required>
                             </div> </p>
                             <input type="submit" class="btn btn-light btn-rounded" value="Submit Username" />
                         </form>
