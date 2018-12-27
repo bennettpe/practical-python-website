@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+                                                          <title> Practical Python Project "LEADER.HTML" (Paul Bennett) </title>
+    <!-- Include standard links                       --> {% include 'head.html' %}                                                       
+    <!-- My Custom styles for this template           --> <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my-creative.css') }}"> 
+</head>
+ 
+<body> 
+<!-- Bootstrap theme (Creative) downloaded from  https://github.com/BlackrockDigital/startbootstrap-creative -->
+    <body id="page-top">
+
+    <!-- Navigation Navbar -->
+    {% include 'navbar_quiz.html' %}
+    
+    <section class="masthead bg-primary text-center" id="leader_header">
+      <div class="container-fluid">
+        <h2 class="section-heading text-light"> QUIZ LEADER BOARD </h2>
+        <hr class="light mx-auto">
+       <div class="row">   
+       
+        <div class="col-lg-4 col-sm-6">
+            <p> <h4 class="text-center text-light"> Capitals </h4> </p>
+            <p> <table class="table-bordered" style="width:50%">
+                    <thead>
+                        <tr>
+                            <th scope="col"> Date      &nbsp;</td> 
+                            <th scope="col"> User      &nbsp;</td> 
+                            <th scope="col"> Questions &nbsp;</td> 
+                            <th scope="col"> Score     &nbsp;</td> 
+                        </tr>
+                        <tbody>
+                        {% for item in capitals_leaders %}
+                            <tr>
+                                <th scope="row"> {{ item[0] }} </td>
+                                <td>             {{ item[1] }} </td>
+                                <td>             {{ item[2] }} </td>
+                                <td>             {{ item[3] }} </td>
+                            </tr> 
+                        {% endfor %} 
+                        </tbody> 
+                    </thead>
+            </table> </p>
+        </div>
+         
+        <div class="col-lg-4 col-sm-6">
+            <p> <h4 class="text-center text-light"> Geography1 </h4> </p>
+            <p> <table class="table-bordered" style="width:50%">
+                    <thead>
+                        <tr>
+                            <th scope="col"> Date      &nbsp;</td> 
+                            <th scope="col"> User      &nbsp;</td> 
+                            <th scope="col"> Questions &nbsp;</td> 
+                            <th scope="col"> Score     &nbsp;</td> 
+                        </tr>
+                        <tbody>
+                        {% for item in geography1_leaders %}
+                            <tr>
+                                <th scope="row"> {{ item[0] }} </td>
+                                <td>             {{ item[1] }} </td>
+                                <td>             {{ item[2] }} </td>
+                                <td>             {{ item[3] }} </td>
+                            </tr> 
+                        {% endfor %} 
+                        </tbody> 
+                    </thead>
+            </table> </p>
+        </div> 
+        
+        <div class="col-lg-4 col-sm-6">
+            <p> <h4 class="text-center text-light"> Geography2 </h4> </p>
+            <p> <table class="table-bordered" style="width:50%">
+                    <thead>
+                        <tr>
+                            <th scope="col"> Date      &nbsp;</td> 
+                            <th scope="col"> User      &nbsp;</td> 
+                            <th scope="col"> Questions &nbsp;</td> 
+                            <th scope="col"> Score     &nbsp;</td> 
+                        </tr>
+                        <tbody>
+                        {% for item in geography2_leaders %}
+                            <tr>
+                                <th scope="row"> {{ item[0] }} </td>
+                                <td>             {{ item[1] }} </td>
+                                <td>             {{ item[2] }} </td>
+                                <td>             {{ item[3] }} </td>
+                            </tr> 
+                        {% endfor %} 
+                        </tbody> 
+                    </thead>
+            </table> </p>
+        </div> 
+        
+        <div class="col-lg-4 col-sm-6">
+            <p> <h4 class="text-center text-light"> Highest </h4> </p>
+            <p> <table class="table-bordered" style="width:50%">
+                    <thead>
+                        <tr>
+                            <th scope="col"> Date      &nbsp;</td> 
+                            <th scope="col"> User      &nbsp;</td> 
+                            <th scope="col"> Questions &nbsp;</td> 
+                            <th scope="col"> Score     &nbsp;</td> 
+                        </tr>
+                        <tbody>
+                        {% for item in highest_leaders %}
+                            <tr>
+                                <th scope="row"> {{ item[0] }} </td>
+                                <td>             {{ item[1] }} </td>
+                                <td>             {{ item[2] }} </td>
+                                <td>             {{ item[3] }} </td>
+                            </tr> 
+                        {% endfor %} 
+                        </tbody> 
+                    </thead>
+            </table> </p>
+        </div> 
+        
+        <div class="col-lg-4 col-sm-6">
+            <p> <h4 class="text-center text-light"> Islands </h4> </p>
+            <p> <table class="table-bordered" style="width:50%">
+                    <thead>
+                        <tr>
+                            <th scope="col"> Date      &nbsp;</td> 
+                            <th scope="col"> User      &nbsp;</td> 
+                            <th scope="col"> Questions &nbsp;</td> 
+                            <th scope="col"> Score     &nbsp;</td> 
+                        </tr>
+                        <tbody>
+                        {% for item in islands_leaders %}
+                            <tr>
+                                <th scope="row"> {{ item[0] }} </td>
+                                <td>             {{ item[1] }} </td>
+                                <td>             {{ item[2] }} </td>
+                                <td>             {{ item[3] }} </td>
+                            </tr> 
+                        {% endfor %} 
+                        </tbody> 
+                    </thead>
+            </table> </p>
+        </div> 
+        
+        <div class="col-lg-4 col-sm-6">
+            <p> <h4 class="text-center text-light"> Populous </h4> </p>
+            <p> <table class="table-bordered" style="width:50%">
+                    <thead>
+                        <tr>
+                            <th scope="col"> Date      &nbsp;</td> 
+                            <th scope="col"> User      &nbsp;</td> 
+                            <th scope="col"> Questions &nbsp;</td> 
+                            <th scope="col"> Score     &nbsp;</td> 
+                        </tr>
+                        <tbody>
+                        {% for item in populous_leaders %}
+                            <tr>
+                                <th scope="row"> {{ item[0] }} </td>
+                                <td>             {{ item[1] }} </td>
+                                <td>             {{ item[2] }} </td>
+                                <td>             {{ item[3] }} </td>
+                            </tr> 
+                        {% endfor %} 
+                        </tbody> 
+                    </thead>
+            </table> </p>
+        </div> 
+    </section>	
+    
+     <!-- Footer -->
+    {% include 'footer.html' %}
+    
+    <!-- Script -->
+    {% include 'script.html' %} 
+</body>
+ 
+</html>            

@@ -1,7 +1,6 @@
 import os
 from datetime import datetime
 from flask import Flask, flash, json, render_template, redirect, request, url_for
-from natsort import natsorted
 
     
 # -------------------------------- #
@@ -21,24 +20,7 @@ def create_date():
     get_date = datetime.now().strftime(date_format)
     return get_date
 
-# -------------------------------------------------#
-# Get username,number of questions,score function #
-# -------------------------------------------------#
-def get_leaders_file(filename):
-    score_players = [] 
-    with open(filename,"r") as file:
-         for line in file.readlines():
-             score_players.append(line)
-           
-         sorted_players = []
-         for player in score_players:
-             tupe = (player.split(':')[0], 
-                     player.split(':')[1], 
-                     player.split(':')[2], 
-                     player.split(':')[3].strip())
-             sorted_players.append(tupe)
-         return natsorted(sorted_players,key=sortkey,reverse=True)[:6] # natural sort , highest first, top 6 
-         
+
 # -------------------------#
 # Reading a file function #
 # -------------------------#    
@@ -46,13 +28,8 @@ def read_from_file(filename):
 	with open(filename,"r") as file:
 		data = file.readlines()
 		return data
-		
-# ------------------#
-# Sortkey function #
-# ------------------#  
-def sortkey(n):
-    return n[3]
-    
+
+
 # ---------------------------------------#
 # Split answer file function            #
 # Create dict and split into key, value #
@@ -651,21 +628,8 @@ def islands_completed_quiz():
 # ----------------------#
 @app.route('/leaderboard', methods=['GET', 'POST'])
 def leaderboard():
-    
-    capitals_leaders   = get_leaders_file('./data/capitals/capitals_leaders.txt')
-    geography1_leaders = get_leaders_file('./data/geography1/geography1_leaders.txt')
-    geography2_leaders = get_leaders_file('./data/geography2/geography2_leaders.txt')
-    highest_leaders    = get_leaders_file('./data/highest/highest_leaders.txt')
-    islands_leaders    = get_leaders_file('./data/islands/islands_leaders.txt')
-    populous_leaders   = get_leaders_file('./data/populous/populous_leaders.txt')
-    print(capitals_leaders)
-    print(geography1_leaders)
-    return render_template('leaders.html',capitals_leaders   = capitals_leaders, 
-                                          geography1_leaders = geography1_leaders, 
-                                          geography2_leaders = geography2_leaders,
-                                          highest_leaders    = highest_leaders,
-                                          islands_leaders    = islands_leaders,
-                                          populous_leaders   = populous_leaders)  
+
+    return render_template('leaders.html')  
     
 # -----------------------------------#
 # Get Username for populous category #
