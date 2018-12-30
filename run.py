@@ -21,6 +21,7 @@ def create_date():
     get_date = datetime.now().strftime(date_format)
     return get_date
 
+
 # -------------------------------------------------#
 # Get username,number of questions,score function #
 # -------------------------------------------------#
@@ -38,6 +39,7 @@ def get_leaders_file(filename):
                      player.split(':')[3].strip())
              sorted_players.append(tupe)
          return natsorted(sorted_players,key=sortkey,reverse=True)[:6] # natural sort , highest first, top 6 
+ 
          
 # -------------------------#
 # Reading a file function #
@@ -46,13 +48,15 @@ def read_from_file(filename):
 	with open(filename,"r") as file:
 		data = file.readlines()
 		return data
+
 		
 # ------------------#
 # Sortkey function #
 # ------------------#  
 def sortkey(n):
     return n[3]
-    
+
+   
 # ---------------------------------------#
 # Split answer file function            #
 # Create dict and split into key, value #
@@ -104,7 +108,6 @@ def index():
     return render_template('index.html')
 
  
-    
 # ------------------------------------#
 # Get Username for capitals category #
 # ------------------------------------#
@@ -113,15 +116,51 @@ def capitals_get_username():
 
     catname  = 'Odd One Out Capitals'
     imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-442135.jpg'
+    message  = []
+    player   = []
     urlname  = '/capitals_get_username'
-
+    urlforname = '/capitals_sign_in'
+    
     if request.method == 'POST':
-        with open('./data/capitals/capitals_username.txt', 'a') as username_list:
-             username_list.write(request.form['get_username']+ '\n')  
-             open('./data/capitals/capitals_correct_answer.txt', 'w').close()  
-             open('./data/capitals/capitals_incorrect_answer.txt', 'w').close()
-        return redirect(url_for('capitals_user', capitals_username = request.form['get_username']))     
-    return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname)   
+        with open('./data/capitals/capitals_username.txt', 'r') as username_list:
+            active_username = username_list.read().splitlines() 
+            player = request.form['get_username'].lower() 
+            if player in active_username:
+                message = "username taken"
+                print(urlforname) 
+            else: 
+                file = open('./data/capitals/capitals_username.txt', 'a')
+                file.write(player + '\n')  
+                open('./data/capitals/capitals_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
+                open('./data/capitals/capitals_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
+                return redirect(url_for('capitals_user'))  
+    return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, username_message=message, username_player=player)   
+
+
+# --------------------------------#
+# Sign in  for capitals category #
+# --------------------------------#
+@app.route('/capitals_sign_in', methods=['GET', 'POST'])
+def capitals_sign_in():
+    
+    catname  = 'Odd One Out Capitals'
+    imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-442135.jpg'
+    message  = []
+    player   = []
+    urlname  = '/capitals_sign_in'
+    urlforname = '/capitals_get_username'
+   
+    if request.method == 'POST':
+        with open('./data/capitals/capitals_username.txt', 'r') as username_list:
+            active_username = username_list.read().splitlines() 
+            player = request.form['get_username'].lower() 
+            if player in active_username:
+                open('./data/capitals/capitals_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
+                open('./data/capitals/capitals_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
+                return redirect(url_for('capitals_user', capitals_username = request.form['get_username']))   
+            else:
+                message = "Sorry, this username is incorrect. New User?"    
+    return render_template('sign_in.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, signin_message=message, username_player=player)   
 
     
 # -----------------------------------#
@@ -131,11 +170,12 @@ def capitals_get_username():
 @app.route('/capitals_user<capitals_username>', methods=['GET', 'POST'])
 def capitals_user(capitals_username):
 
-    catname  = 'Odd One Out Capitals'
-    cattext  = 'Can you choose the capital that is NOT on the given continent'
-    imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-442135.jpg'
+    catname       = 'Odd One Out Capitals'
+    catnum        = 'Four'
+    cattext       = 'Can you choose the capital that is NOT on the given continent'
     check_correct = []
-    questions = []
+    imgname       = './static/img/portfolio/thumbnails/image-from-rawpixel-id-442135.jpg'
+    questions     = []
     
     with open('./data/capitals/odd_one_out_capitals.questions.json', 'r') as questions_file:  
         questions = json.load(questions_file)
@@ -172,10 +212,10 @@ def capitals_user(capitals_username):
                                + str(score) + '\n') 
                 return redirect('capitals_completed_quiz')
 
-
     return render_template('quiz.html',
                             category = catname,
                             category_text = cattext,
+                            catnum = catnum,
                             img_id = imgname,
                             questions = questions,
                             index = index,
@@ -222,17 +262,52 @@ def geography1_get_username():
 
     catname  = 'Geography 1'
     imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg'
+    message  = []
+    player   = []
     urlname  = '/geography1_get_username'
+    urlforname = '/geography1_sign_in'
     
     if request.method == 'POST':
-        with open('./data/geography1/geography1_username.txt', 'a') as username_list:
-            username_list.write(request.form['get_username']+ '\n')  
-            open('./data/geography1/geography1_correct_answer.txt', 'w').close()  
-            open('./data/geography1/geography1_incorrect_answer.txt', 'w').close()
-        return redirect(url_for('geography1_user', geography1_username = request.form['get_username']))
-    return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname)
+        with open('./data/geography1/geography1_username.txt', 'r') as username_list:
+            active_username = username_list.read().splitlines() 
+            player = request.form['get_username'].lower() 
+            if player in active_username:
+                message = "username taken"
+            else: 
+                file = open('./data/geography1/geography1_username.txt', 'a')
+                file.write(player + '\n')  
+                open('./data/geography1/geography1_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
+                open('./data/geography1/geography1_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
+                return redirect(url_for('geography1_sign_in', geography1_username = request.form['get_username']))
+    return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, username_message=message, username_player=player)
 
 
+# ---------------------------------#
+# Sign in for geography1 category #
+# ---------------------------------#
+@app.route('/geography1_sign_in', methods=['GET', 'POST'])
+def geography1_sign_in():
+    
+    catname  = 'Geography 1'
+    imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg'
+    message  = []
+    player   = []
+    urlname  = '/geography1_sign_in'
+    urlforname = '/geography1_get_username'
+    
+    if request.method == 'POST':
+        with open('./data/geography1/geography1_username.txt', 'r') as username_list:
+            active_username = username_list.read().splitlines() 
+            player = request.form['get_username'].lower() 
+            if player in active_username:
+                open('./data/geography1/geography1_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
+                open('./data/geography1/geography1_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
+                return redirect(url_for('geography1_user', geography1_username = request.form['get_username']))
+            else:
+                message = "Sorry, this username is incorrect. New User?"    
+    return render_template('sign_in.html',category=catname, img_id=imgname, url_id=urlname, urlfornme=urlforname, signin_message=message, username_player=player) 
+    
+    
 # -------------------------------------#
 # Read   geography1 jsonfile          #
 # Render geography1_quiz.html page    #
@@ -240,11 +315,12 @@ def geography1_get_username():
 @app.route('/geography1_user<geography1_username>', methods=['GET', 'POST'])
 def geography1_user(geography1_username):
 
-    catname  = 'Geography1'
-    cattext  = 'How many questions do you know in Geography1'
-    imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg'
+    catname       = 'Geography1'
+    cattext       = 'How many questions do you know in Geography1'
+    catnum        = 'Four'
     check_correct = []
-    questions = []
+    imgname       = './static/img/portfolio/thumbnails/image-from-rawpixel-id-90517.jpg'
+    questions     = []
     
     with open('./data/geography1/geography1_questions.json', 'r') as questions_file:  
         questions = json.load(questions_file)
@@ -284,6 +360,7 @@ def geography1_user(geography1_username):
     return render_template('quiz.html',
                             category = catname,
                             category_text = cattext,
+                            catnum = catnum,
                             img_id = imgname,
                             questions = questions,
                             index = index,
@@ -294,7 +371,6 @@ def geography1_user(geography1_username):
                             username = geography1_username
                           )
                           
-                           
                            
 # --------------------------------------------#
 # Read   geography1_leaders.txt file         #
@@ -331,15 +407,50 @@ def geography2_get_username():
 
     catname  = 'Geography 2'
     imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-433915.jpg'
+    message  = []
+    player   = []
     urlname  = '/geography2_get_username'
-
+    urlforname = '/geography2_sign_in'
+    
     if request.method == 'POST':
-        with open('./data/geography2/geography2_username.txt', 'a') as username_list:
-            username_list.write(request.form['get_username']+ '\n')  
-        open('./data/geography2/geography2_correct_answer.txt', 'w').close()  
-        open('./data/geography2/geography2_incorrect_answer.txt', 'w').close()
-        return redirect(url_for('geography2_user', geography2_username = request.form['get_username']))
-    return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname) 
+        with open('./data/geography2/geography2_username.txt', 'r') as username_list:
+            active_username = username_list.read().splitlines() 
+            player = request.form['get_username'].lower() 
+            if player in active_username:
+               message = "username taken"
+            else: 
+                file = open('./data/geography2/geography2_username.txt', 'a')
+                file.write(player + '\n')  
+                open('./data/geography2/geography2_completed_quiz_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
+                open('./data/geography2/geograpjy2_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
+                return redirect(url_for('geography2_sign_in', geography2_username = request.form['get_username']))
+    return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, username_message=message, username_player=player) 
+
+
+# ---------------------------------#
+# Sign in for geography2 category #
+# ---------------------------------#
+@app.route('/geography2_sign_in', methods=['GET', 'POST'])
+def geography2_sign_in():
+    
+    catname  = 'Geography 2'
+    imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-433915.jpg'
+    message  = []
+    player   = []
+    urlname  = '/geography2_sign_in'
+    urlforname = '/geography2_get_username'
+    
+    if request.method == 'POST':
+        with open('./data/geography2/geography2_username.txt', 'r') as username_list:
+            active_username = username_list.read().splitlines() 
+            player = request.form['get_username'].lower() 
+            if player in active_username:
+                open('./data/geography2/geography2_completed_quiz_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
+                open('./data/geography2/geograpjy2_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
+                return redirect(url_for('geography2_user', geography2_username = request.form['get_username']))   
+            else:
+                message = "Sorry, this username is incorrect. New User?"    
+    return render_template('sign_in.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, signin_message=message, username_player=player) 
 
 
 # -------------------------------------#
@@ -349,11 +460,12 @@ def geography2_get_username():
 @app.route('/geography2_user<geography2_username>', methods=['GET', 'POST'])
 def geography2_user(geography2_username):
 
-    catname  = 'Geography2'
-    imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-433915.jpg'
-    cattext  = 'How many questions do you know in Geography2'
+    catname       = 'Geography2'
+    cattext       = 'How many questions do you know in Geography2'
+    catnum        = 'Four'
     check_correct = []
-    questions = []
+    imgname       = './static/img/portfolio/thumbnails/image-from-rawpixel-id-433915.jpg'
+    questions     = []
     
     with open('./data/geography2/geography2_questions.json', 'r') as questions_file:  
         questions = json.load(questions_file)
@@ -393,6 +505,7 @@ def geography2_user(geography2_username):
     return render_template('quiz.html',
                             category = catname,
                             category_text = cattext,
+                            catnum = catnum,
                             img_id = imgname,
                             questions = questions,
                             index = index,
@@ -439,15 +552,50 @@ def highest_get_username():
 
     catname  = 'Highest'
     imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-431844.jpg'
+    message  = []
+    player   = []
     urlname  = '/highest_get_username'
+    urlforname = '/highest_sign_in'
 
     if request.method == 'POST':
-        with open('./data/highest/highest_username.txt', 'a') as username_list:
-             username_list.write(request.form['get_username']+ '\n') 
-        open('./data/highest/highest_correct_answer.txt', 'w').close()  
-        open('./data/highest/highest_incorrect_answer.txt', 'w').close()
-        return redirect(url_for('highest_user', highest_username = request.form['get_username']))
-    return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname)     
+        with open('./data/highest/highest_username.txt', 'r') as username_list:
+            active_username = username_list.read().splitlines() 
+            player = request.form['get_username'].lower() 
+            if player in active_username:
+                message = "username taken"
+            else: 
+                file = open('./data/highest/highest_username.txt', 'a')
+                file.write(player + '\n')  
+                open('./data/highest/highest_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
+                open('./data/highest/highest_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
+                return redirect(url_for('highest_sign_in', highest_username = request.form['get_username']))
+    return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, username_message=message, username_player=player)    
+
+
+# ---------------------------------#
+# Sign in for highest category #
+# ---------------------------------#
+@app.route('/highest_sign_in', methods=['GET', 'POST'])
+def highest_sign_in():
+    
+    catname  = 'Highest'
+    imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-431844.jpg'
+    message  = []
+    player   = []
+    urlname  = '/highest_sign_in'
+    urlforname = '/highest_get_username'
+    
+    if request.method == 'POST':
+        with open('./data/highest/highest_username.txt', 'r') as username_list:
+            active_username = username_list.read().splitlines() 
+            player = request.form['get_username'].lower() 
+            if player in active_username:
+                open('./data/highest/highest_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
+                open('./data/highest/highest_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
+                return redirect(url_for('highest_user', highest_username = request.form['get_username']))   
+            else:
+                message = "Sorry, this username is incorrect. New User?"    
+    return render_template('sign_in.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, signin_message=message, username_player=player) 
 
 
 # ----------------------------------#
@@ -457,11 +605,12 @@ def highest_get_username():
 @app.route('/highest_user<highest_username>', methods=['GET', 'POST'])
 def highest_user(highest_username):
 
-    catname  = 'Highest'
-    cattext  = 'Can you choose which city has the HIGHEST elevation above sea level'
-    imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-431844.jpg'
+    catname       = 'Highest'
+    cattext       = 'Can you choose which city has the HIGHEST elevation above sea level'
+    catnum        = 'Three'
     check_correct = []
-    questions = []
+    imgname       = './static/img/portfolio/thumbnails/image-from-rawpixel-id-431844.jpg'
+    questions     = []
     
     with open('./data/highest/which_city_has_the_highest_elevation_above_sea_level.questions.json', 'r') as questions_file:  
         questions = json.load(questions_file)
@@ -501,6 +650,7 @@ def highest_user(highest_username):
     return render_template('quiz.html',
                             category = catname,
                             category_text = cattext,
+                            catnum = catnum,
                             img_id = imgname,
                             questions = questions,
                             index = index,
@@ -547,17 +697,52 @@ def islands_get_username():
 
     catname  = 'Islands'
     imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-424508.jpg'
+    message  = []
+    player   = [] 
     urlname  = '/islands_get_username'
+    urlforname = '/islands_sign_in'
 
     if request.method == 'POST':
-        with open('./data/islands/islands_username.txt', 'a') as username_list:
-             username_list.write(request.form['get_username']+ '\n') 
-        open('./data/islands/islands_correct_answer.txt', 'w').close()  
-        open('./data/islands/islands_incorrect_answer.txt', 'w').close()
-        return redirect(url_for('islands_user', islands_username = request.form['get_username']))
-    return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname)    
+        with open('./data/islands/islands_username.txt', 'r') as username_list:
+            active_username = username_list.read().splitlines() 
+            player = request.form['get_username'].lower() 
+            if player in active_username:
+                message = "username taken"
+            else: 
+                file = open('./data/islands/islands_username.txt', 'a')
+                file.write(player + '\n')  
+                open('./data/islands/islands_correct_answer.txt', 'w').close()  
+                open('./data/islands/islands_incorrect_answer.txt', 'w').close()
+                return redirect(url_for('islands_user'))
+    return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, username_message=message, username_player=player)    
 
 
+# -------------------------------#
+# Sign in for islands category #
+# -------------------------------#
+@app.route('/islands_sign_in', methods=['GET', 'POST'])
+def islands_sign_in():
+    
+    catname  = 'Islands'
+    imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-424508.jpg'
+    message  = []
+    player   = []
+    urlname  = '/islands_sign_in'
+    urlforname = '/islands_get_username'
+    
+    if request.method == 'POST':
+        with open('./data/islands/islands_username.txt', 'r') as username_list:
+            active_username = username_list.read().splitlines() 
+            player = request.form['get_username'].lower() 
+            if player in active_username:
+                open('./data/islands/islands_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
+                open('./data/islands/islands_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
+                return redirect(url_for('islands_user', islands_username = request.form['get_username']))   
+            else:
+                message = "Sorry, this username is incorrect. New User?"    
+    return render_template('sign_in.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, signin_message=message, username_player=player) 
+    
+    
 # ----------------------------------#
 # Read   islands jsonfile          #
 # Render islands_quiz.html page    #
@@ -565,11 +750,12 @@ def islands_get_username():
 @app.route('/islands_user<islands_username>', methods=['GET', 'POST'])
 def islands_user(islands_username):
 
-    catname  = 'Islands'
-    cattext  = 'Can you choose which COUNTRY lays claim to each of these islands'
-    imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-424508.jpg'
+    catname       = 'Islands'
+    cattext       = 'Can you choose which COUNTRY lays claim to each of these islands'
+    catnum        = 'Four'
     check_correct = []
-    questions = []
+    imgname       = './static/img/portfolio/thumbnails/image-from-rawpixel-id-424508.jpg'
+    questions     = []
     
     with open('./data/islands/who_owns_these_islands_questions.json', 'r') as questions_file:  
         questions = json.load(questions_file)
@@ -609,6 +795,7 @@ def islands_user(islands_username):
     return render_template('quiz.html',
                             category = catname,
                             category_text = cattext,
+                            catnum = catnum,
                             img_id = imgname,
                             questions = questions,
                             index = index,
@@ -645,6 +832,7 @@ def islands_completed_quiz():
                             correct_answers = correct_answers, 
                             last_username = last_username
                           )
+
                           
 # ----------------------#
 # leaderboard category #
@@ -658,14 +846,13 @@ def leaderboard():
     highest_leaders    = get_leaders_file('./data/highest/highest_leaders.txt')
     islands_leaders    = get_leaders_file('./data/islands/islands_leaders.txt')
     populous_leaders   = get_leaders_file('./data/populous/populous_leaders.txt')
-    print(capitals_leaders)
-    print(geography1_leaders)
     return render_template('leaders.html',capitals_leaders   = capitals_leaders, 
                                           geography1_leaders = geography1_leaders, 
                                           geography2_leaders = geography2_leaders,
                                           highest_leaders    = highest_leaders,
                                           islands_leaders    = islands_leaders,
                                           populous_leaders   = populous_leaders)  
+ 
     
 # -----------------------------------#
 # Get Username for populous category #
@@ -675,15 +862,50 @@ def populous_get_username():
 
     catname  = 'Populous'
     imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-90625.jpg'
+    message  = []
+    player   = []
     urlname  = '/populous_get_username'
+    urlforname = '/populous_sign_in'
 
     if request.method == 'POST':
-        with open('./data/populous/populous_username.txt', 'a') as username_list:
-            username_list.write(request.form['get_username']+ '\n') 
-        open('./data/populous/populous_correct_answer.txt', 'w').close()  
-        open('./data/populous/populous_incorrect_answer.txt', 'w').close()
-        return redirect(url_for('populous_user', populous_username = request.form['get_username']))
-    return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname)   
+        with open('./data/populous/populous_username.txt', 'r') as username_list:
+            active_username = username_list.read().splitlines() 
+            player = request.form['get_username'].lower() 
+            if player in active_username:
+                message = "username taken"
+            else: 
+                file = open('./data/populous/populous_username.txt', 'a')
+                file.write(player + '\n') 
+                open('./data/populous/populous_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
+                open('./data/popolous/populous_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt
+                return redirect(url_for('populous_user'))
+    return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, username_message=message, username_player=player)   
+    
+
+# -------------------------------#
+# Sign in for populous category #
+# -------------------------------#
+@app.route('/populous_sign_in', methods=['GET', 'POST'])
+def populous_sign_in():
+    
+    catname  = 'Populous'
+    imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-90625.jpg'
+    message  = []
+    player   = []
+    urlname  = '/populous_sign_in'
+    urlforname = '/populous_get_username'
+    
+    if request.method == 'POST':
+        with open('./data/populous/populous_username.txt', 'r') as username_list:
+            active_username = username_list.read().splitlines() 
+            player = request.form['get_username'].lower() 
+            if player in active_username:
+                open('./data/populous/populous_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
+                open('./data/populous/populous_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
+                return redirect(url_for('populous_user', populous_username = request.form['get_username']))   
+            else:
+                message = "Sorry, this username is incorrect. New User?"    
+    return render_template('sign_in.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, signin_message=message, username_player=player)    
     
     
 # -----------------------------------#
@@ -693,11 +915,12 @@ def populous_get_username():
 @app.route('/populous_user<populous_username>', methods=['GET', 'POST'])
 def populous_user(populous_username):
 
-    catname  = 'populous'
-    cattext  = 'Can you choose the LEAST POPULOUS neighbour of countries with exactly three land bordering countries'
-    imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-90625.jpg'
+    catname       = 'populous'
+    catnum        = 'Three'
+    cattext       = 'Can you choose the LEAST POPULOUS neighbour of countries with exactly three land bordering countries'
     check_correct = []
-    questions = []
+    imgname       = './static/img/portfolio/thumbnails/image-from-rawpixel-id-90625.jpg'
+    questions     = []
     
     with open('./data/populous/least_populous_of_the_three_questions.json', 'r') as questions_file:  
         questions = json.load(questions_file)
@@ -737,6 +960,7 @@ def populous_user(populous_username):
     return render_template('quiz.html',
                             category = catname,
                             category_text = cattext,
+                            catnum = catnum,
                             img_id = imgname,
                             questions = questions,
                             index = index,
@@ -746,6 +970,7 @@ def populous_user(populous_username):
                             count_questions = count_questions,
                             username = populous_username
                            )    
+
                            
 # -----------------------------------------#
 # Read   populous_leaders.txt file         #
@@ -757,7 +982,7 @@ def populous_user(populous_username):
 def populous_completed_quiz():  
     
     catname  = 'Populous'
-    imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-424508.jpg'
+    imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-90625.jpg'
     
     last_count, last_date, last_score, last_username = get_last_line('./data/populous/populous_leaders.txt') 
     correct_answers   = split_answer_file('./data/populous/populous_correct_answer.txt')
@@ -772,6 +997,7 @@ def populous_completed_quiz():
                             correct_answers = correct_answers, 
                             last_username = last_username
                           )
+
                           
 if __name__ == '__main__': 
     app.run(host=os.environ.get('IP'), 

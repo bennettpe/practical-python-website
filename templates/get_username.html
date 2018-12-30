@@ -28,12 +28,23 @@
 
                     <div class="col-lg-6 col-sm-6 text-center" id="right_column">
                         <h4 class="text-center text-light"> Please enter USERNAME to commence quiz: </h4>
-                             <form method="POST" action="{{ url_id }}" autocomplete="off"> <!-- Disabled autocompletion --> 
+                        <form method="POST" action="{{ url_id }}" autocomplete="off"> <!-- Disabled autocompletion --> 
                             <p> <div class="input-group justify-content-center">
                              <input id="get_username" type="text" class="form-control" name="get_username" placeholder="Enter your username here" autofocus required>
                             </div> </p>
                             <input type="submit" class="btn btn-light btn-rounded" value="Submit Username" />
                         </form>
+                        
+                        <p> </p>
+                        <p <h4 class="text-center text-dark">
+                          {% if username_message == "username taken" %}  
+                             Sorry, but username <span class="text-light"> &nbsp;{{ username_player.upper() }}&nbsp; </span> <span class="text-dark"> has been registered. </span> 
+                             <p> <span class="text-dark"> Please choose a different USERNAME. </span> </p>
+                        </p>
+                        <p> Have you already registered? <a href="{{ urlforname }}">  
+                            <button type ="button" class="btn btn-link text-capitalize text-light"> Sign In Here </button> </a>
+                          {% endif %}
+                       </p>   
                     </div>
 
                 </div

@@ -35,9 +35,10 @@
     			         <span class="text-dark"> 1. <span class="text-light"> {{ questions[index]["option1"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     				     <span class="text-dark"> 2. <span class="text-light"> {{ questions[index]["option2"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     				     <span class="text-dark"> 3. <span class="text-light"> {{ questions[index]["option3"] }} </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    				     <span class="text-dark"> 4. <span class="text-light"> {{ questions[index]["option4"] }} </span>
+    				     {% if catnum == 'Four' %}
+                         <span class="text-dark"> 4. <span class="text-light"> {{ questions[index]["option4"] }} </span>
+                         {% endif %}
     				 </h4> </p>
-    				  
     	       </div>
     	          
 			   <form method="POST" autocomplete="off"> <!-- Disabled autocompletion -->

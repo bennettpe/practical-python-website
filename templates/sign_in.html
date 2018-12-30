@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+                                                          <title> Practical Python Project "SIGN_IN.HTML" (Paul Bennett) </title>
+    <!-- Include standard links                       --> {% include 'head.html' %}                                                       
+    <!-- My Custom styles for this template           --> <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my-creative.css') }}"> 
+</head>
+ 
+<body> 
+<!-- Bootstrap theme (Creative) downloaded from  https://github.com/BlackrockDigital/startbootstrap-creative -->
+    <body id="page-top">
+
+    <!-- Navigation Navbar -->
+    {% include 'navbar_quiz.html' %}
+    
+    <section class="masthead bg-primary text-center" id="signin_header">
+     <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 text-center">
+                        <h2 class="text-center text-light"> {{ category }} Quiz ? </h2>
+                        <hr class="light mb-4">
+                        <img class="rounded mx-auto img-thumbnail" src="{{ img_id }}" alt="{{ category }}">
+                    </div>
+
+
+                    <div class="col-lg-6 col-sm-6 text-center" id="right_column">
+                        <h4 class="text-center text-light"> Already registered ? <p></p> <p> Sign in here to play ! </p> </h4>
+                        <form method="POST" action="{{ url_id }}" autocomplete="off"> <!-- Disabled autocompletion --> 
+                            <p> <div class="input-group justify-content-center">
+                             <input id="get_username" type="text" class="form-control" name="get_username" placeholder="Enter your username here" autofocus required>
+                            </div> </p>
+                            <button type ="submit" class="btn btn-light btn-rounded text-capitalize text-dark" value="signin"> Answer Some Questions! </button> </a>
+                        </form>
+                        
+                        <p> </p>
+                        <p <h4 class="message text-center text-dark">
+                          {% if signin_message %}  
+                          {{ signin_message }} <a href="{{ urlforname }}"> 
+                            <button type ="button" class="btn btn-link text-capitalize text-dark"> Register here </button> </a>
+                          {% endif %}
+                       </p>   
+                    </div>
+
+                </divS
+            </div>    
+    </section>	
+    
+     <!-- Footer -->
+    {% include 'footer.html' %}
+    
+    <!-- Script -->
+    {% include 'script.html' %} 
+</body>
+ 
+</html>            
