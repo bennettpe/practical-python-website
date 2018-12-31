@@ -114,11 +114,11 @@ def index():
 @app.route('/capitals_get_username', methods=['GET', 'POST'])
 def capitals_get_username():
 
-    catname  = 'Odd One Out Capitals'
-    imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-442135.jpg'
-    message  = []
-    player   = []
-    urlname  = '/capitals_get_username'
+    catname    = 'Odd One Out Capitals'
+    imgname    = './static/img/portfolio/thumbnails/image-from-rawpixel-id-442135.jpg'
+    message    = []
+    player     = []
+    urlname    = '/capitals_get_username'
     urlforname = '/capitals_sign_in'
     
     if request.method == 'POST':
@@ -127,13 +127,12 @@ def capitals_get_username():
             player = request.form['get_username'].lower() 
             if player in active_username:
                 message = "username taken"
-                print(urlforname) 
             else: 
                 file = open('./data/capitals/capitals_username.txt', 'a')
                 file.write(player + '\n')  
                 open('./data/capitals/capitals_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
                 open('./data/capitals/capitals_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
-                return redirect(url_for('capitals_user'))  
+                return redirect(url_for('capitals_sign_in'))  
     return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, username_message=message, username_player=player)   
 
 
@@ -143,11 +142,11 @@ def capitals_get_username():
 @app.route('/capitals_sign_in', methods=['GET', 'POST'])
 def capitals_sign_in():
     
-    catname  = 'Odd One Out Capitals'
-    imgname  = './static/img/portfolio/thumbnails/image-from-rawpixel-id-442135.jpg'
+    catname    = 'Odd One Out Capitals'
+    imgname    = './static/img/portfolio/thumbnails/image-from-rawpixel-id-442135.jpg'
     message  = []
     player   = []
-    urlname  = '/capitals_sign_in'
+    urlname    = '/capitals_sign_in'
     urlforname = '/capitals_get_username'
    
     if request.method == 'POST':
@@ -159,7 +158,7 @@ def capitals_sign_in():
                 open('./data/capitals/capitals_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
                 return redirect(url_for('capitals_user', capitals_username = request.form['get_username']))   
             else:
-                message = "Sorry, this username is incorrect. New User?"    
+                message = "Sorry, this username is incorrect. New User?"  
     return render_template('sign_in.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, signin_message=message, username_player=player)   
 
     
@@ -300,12 +299,12 @@ def geography1_sign_in():
             active_username = username_list.read().splitlines() 
             player = request.form['get_username'].lower() 
             if player in active_username:
-                open('./data/geography1/geography1_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
-                open('./data/geography1/geography1_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
-                return redirect(url_for('geography1_user', geography1_username = request.form['get_username']))
+                open('./data/geography1/geography1_completed_quiz_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
+                open('./data/geography1/geograpjy1_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
+                return redirect(url_for('geography1_user', geography1_username = request.form['get_username']))   
             else:
                 message = "Sorry, this username is incorrect. New User?"    
-    return render_template('sign_in.html',category=catname, img_id=imgname, url_id=urlname, urlfornme=urlforname, signin_message=message, username_player=player) 
+    return render_template('sign_in.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, signin_message=message, username_player=player) 
     
     
 # -------------------------------------#
