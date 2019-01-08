@@ -22,7 +22,7 @@
                     <div class="col-md-5 mb-5 mb-lg-0 text-center">
                         <h2 class="text-center text-uppercase text-dark"> {{ category }} Quiz ? </h2>
                         <p> <h4 class="text-center text-light"> How many questions did you know ? </h4> </p>
-                        <hr class="light mb-5">
+                        <hr class="light mx-auto">
                         <img class="rounded mx-auto img-thumbnail" src="{{ img_id }}" alt="{{ category }}">
                     </div>
 
@@ -31,20 +31,20 @@
                         <p> <h3 class="text-dark">        You got <span class="text-light"> {{ last_score }} </span>
                           <span class="text-dark">         out of <span class="text-light"> {{ last_count }} </h3> </p> 
                     
-                    <p> <table class="table-bordered" style="width:40%">
+                    <p> <table class="table-bordered">
                         <thead>
                             <tr>
-                              <th scope="col"> Correct Answers   </th>
-                              <th scope="col"> Incorrect Answers </th>
+                                <th scope="col"> Correct Answers   </th>
+                                <th scope="col"> Incorrect Answers </th>
                             </tr>
                             <tbody class="text-justify">
                               <tr>
-                              <td> {% for item in correct_answers|dictsort %}
-                                    <ul> {{item[0]}} - <span class="text-light"> {{item[1]}} </span> </ul>
-                                   {% endfor %} </td>
-                              <td> {% for item in incorrect_answers|dictsort %}
-                                    <ul> {{item[0]}} - <span class="text-light"> {{item[1]}} </span> </ul>
-                                   {% endfor %} </td>
+                                  <td> {% for item in correct_answers|dictsort %}
+                                          <ul> {{item[0]}} <span class="text-light"> {{item[1]}} </span> </ul>
+                                       {% endfor %} </td>
+                                  <td> {% for item in incorrect_answers|dictsort %}
+                                          <ul> {{item[0]}} <span class="text-light"> {{item[1]}} </span> </ul>
+                                       {% endfor %} </td>
                               </tr>
                             </tbody> 
                         </thead>    

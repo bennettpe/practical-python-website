@@ -7,19 +7,14 @@
   border-left: solid 3px #fff;
 }
 
-/* add vertical border */
-.form-control {
-  width: 50%;
-}
-
 /* add width of input box */
 #get_username {
-  max-width: 33%;
+  max-width: 50%;
 }
 
 /* add width of input box */
 #username_answer {
-  max-width: 33%;
+  max-width: 50%;
 }
 
 /* centre table in page */
@@ -30,5 +25,7 @@ table {
 ul {
   margin-top: 10px;
   padding-bottom: 0;
+  padding-left: 5px;
+  padding-right: 5px;
   padding-top: 0;
 }

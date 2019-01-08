@@ -1,0 +1,13 @@
+Q01:Manchester
+Q03:Vilnius
+Q05:Baku
+Q07:Paramaribo
+Q08:Jakarta
+Q09:Brasllia
+Q10:Doha
+Q11:Moscow
+Q12:Tirana
+Q13:Chicago
+Q14:Bern
+Q17:Riyadh
+Q19:Quito

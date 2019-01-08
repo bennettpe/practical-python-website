@@ -1,0 +1,12 @@
+Q01:Benin
+Q02:Togo
+Q04:Rwanda
+Q08:Brunei
+Q09:Laos
+Q11:Finland
+Q13:Norway
+Q16:Belize
+Q18:Belgium
+Q19:Zambia
+Q20:Laos
+Q26:Nicaragua

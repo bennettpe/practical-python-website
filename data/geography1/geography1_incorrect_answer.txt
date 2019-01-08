@@ -1,0 +1,7 @@
+Q07:Asia
+Q08:Blue
+Q10:Sudan
+Q11:Nort Korea
+Q12:Bolivia
+Q13:Belize
+Q16:Scotland

@@ -1,0 +1,15 @@
+Q03:Sudan
+Q05:Isrel
+Q06:Guinea
+Q07:Brazil
+Q10:Brazil
+Q12:Yemen
+Q14:Kenya
+Q15:Cameroon
+Q17:Peru
+Q21:Brazil
+Q22:Vhina
+Q23:Somalia
+Q24:Brazil
+Q25:Malaysia
+Q27:Serbia

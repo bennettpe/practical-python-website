@@ -1,0 +1,8 @@
+Q02:Chile
+Q03:France
+Q04:Australia
+Q09:India
+Q11:Canada
+Q14:Iran
+Q19:Spain
+Q20:Italy

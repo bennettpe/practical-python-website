@@ -1,6 +1,6 @@
 import os
 from datetime import datetime
-from flask import Flask, flash, json, render_template, redirect, request, url_for
+from flask import Flask, flash, json, render_template, redirect, request, session, url_for
 from natsort import natsorted
 
     
@@ -130,9 +130,10 @@ def capitals_get_username():
             else: 
                 file = open('./data/capitals/capitals_username.txt', 'a')
                 file.write(player + '\n')  
-                open('./data/capitals/capitals_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
-                open('./data/capitals/capitals_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
-                return redirect(url_for('capitals_sign_in'))  
+                session['user'] = player
+                open('./data/capitals/capitals_correct_answer.txt', 'w').close()   
+                open('./data/capitals/capitals_incorrect_answer.txt', 'w').close() 
+                return redirect(url_for('capitals_user', capitals_username = request.form['get_username']))  
     return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, username_message=message, username_player=player)   
 
 
@@ -154,8 +155,9 @@ def capitals_sign_in():
             active_username = username_list.read().splitlines() 
             player = request.form['get_username'].lower() 
             if player in active_username:
-                open('./data/capitals/capitals_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
-                open('./data/capitals/capitals_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
+                session['user'] = player
+                open('./data/capitals/capitals_correct_answer.txt', 'w').close()  
+                open('./data/capitals/capitals_incorrect_answer.txt', 'w').close() 
                 return redirect(url_for('capitals_user', capitals_username = request.form['get_username']))   
             else:
                 message = "Sorry, this username is incorrect. New User?"  
@@ -202,13 +204,14 @@ def capitals_user(capitals_username):
                 score = score
                 check_correct = False
                 
-            # When all questions have been answered, save final score #
+            # When all questions have been answered, save final score, logoff user #
             if index == count_questions:  # Total number of questions for category
                 write_to_file('./data/capitals/capitals_leaders.txt'
                                , str(todays_date) + ':'
                                + capitals_username + ':'
                                + str(count_questions) + ':'
-                               + str(score) + '\n') 
+                               + str(score) + '\n')
+                session.pop("user", None)               
                 return redirect('capitals_completed_quiz')
 
     return render_template('quiz.html',
@@ -274,10 +277,11 @@ def geography1_get_username():
                 message = "username taken"
             else: 
                 file = open('./data/geography1/geography1_username.txt', 'a')
-                file.write(player + '\n')  
-                open('./data/geography1/geography1_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
-                open('./data/geography1/geography1_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
-                return redirect(url_for('geography1_sign_in', geography1_username = request.form['get_username']))
+                file.write(player + '\n')
+                session['user'] = player
+                open('./data/geography1/geography1_correct_answer.txt', 'w').close()  
+                open('./data/geography1/geography1_incorrect_answer.txt', 'w').close() 
+                return redirect(url_for('geography1_user', geography1_username = request.form['get_username']))
     return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, username_message=message, username_player=player)
 
 
@@ -299,11 +303,12 @@ def geography1_sign_in():
             active_username = username_list.read().splitlines() 
             player = request.form['get_username'].lower() 
             if player in active_username:
-                open('./data/geography1/geography1_completed_quiz_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
-                open('./data/geography1/geograpjy1_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
+                session['user'] = player
+                open('./data/geography1/geography1_correct_answer.txt', 'w').close()   
+                open('./data/geography1/geography1_incorrect_answer.txt', 'w').close() 
                 return redirect(url_for('geography1_user', geography1_username = request.form['get_username']))   
             else:
-                message = "Sorry, this username is incorrect. New User?"    
+                message = "Sorry, but Username"    
     return render_template('sign_in.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, signin_message=message, username_player=player) 
     
     
@@ -347,13 +352,14 @@ def geography1_user(geography1_username):
                 score = score
                 check_correct = False
                 
-            # When all questions have been answered, save final score #
+            # When all questions have been answered, save final score, Log off user #
             if index == count_questions:  # Total number of questions for category
                 write_to_file('./data/geography1/geography1_leaders.txt'
                                , str(todays_date) + ':'
                                + geography1_username + ':'
                                + str(count_questions) + ':'
-                               + str(score) + '\n') 
+                               + str(score) + '\n')
+                session.pop("user", None)                 
                 return redirect(url_for('geography1_completed_quiz', category = catname, img_id = imgname))
                 
     return render_template('quiz.html',
@@ -419,10 +425,11 @@ def geography2_get_username():
                message = "username taken"
             else: 
                 file = open('./data/geography2/geography2_username.txt', 'a')
-                file.write(player + '\n')  
-                open('./data/geography2/geography2_completed_quiz_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
-                open('./data/geography2/geograpjy2_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
-                return redirect(url_for('geography2_sign_in', geography2_username = request.form['get_username']))
+                file.write(player + '\n') 
+                session['user'] = player
+                open('./data/geography2/geography2_correct_answer.txt', 'w').close()   
+                open('./data/geography2/geography2_incorrect_answer.txt', 'w').close() 
+                return redirect(url_for('geography2_user', geography2_username = request.form['get_username']))
     return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, username_message=message, username_player=player) 
 
 
@@ -444,8 +451,9 @@ def geography2_sign_in():
             active_username = username_list.read().splitlines() 
             player = request.form['get_username'].lower() 
             if player in active_username:
-                open('./data/geography2/geography2_completed_quiz_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
-                open('./data/geography2/geograpjy2_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
+                session['user'] = player 
+                open('./data/geography2/geography2_correct_answer.txt', 'w').close()  
+                open('./data/geography2/geography2_incorrect_answer.txt', 'w').close() 
                 return redirect(url_for('geography2_user', geography2_username = request.form['get_username']))   
             else:
                 message = "Sorry, this username is incorrect. New User?"    
@@ -492,13 +500,14 @@ def geography2_user(geography2_username):
                 score = score
                 check_correct = False
 
-            # When all questions have been answered, save final score #
+            # When all questions have been answered, save final score, logoff user #
             if index == count_questions:  # Total number of questions for category
                 write_to_file('./data/geography2/geography2_leaders.txt'
                                , str(todays_date) + ':'
                                + geography2_username + ':'
                                + str(count_questions) + ':'
                                + str(score) + '\n') 
+                session.pop("user", None)                 
                 return redirect('geography2_completed_quiz')
 
     return render_template('quiz.html',
@@ -564,10 +573,11 @@ def highest_get_username():
                 message = "username taken"
             else: 
                 file = open('./data/highest/highest_username.txt', 'a')
-                file.write(player + '\n')  
-                open('./data/highest/highest_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
-                open('./data/highest/highest_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
-                return redirect(url_for('highest_sign_in', highest_username = request.form['get_username']))
+                file.write(player + '\n')
+                session['user'] = player
+                open('./data/highest/highest_correct_answer.txt', 'w').close()   
+                open('./data/highest/highest_incorrect_answer.txt', 'w').close() 
+                return redirect(url_for('highest_user', highest_username = request.form['get_username']))
     return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, username_message=message, username_player=player)    
 
 
@@ -589,8 +599,9 @@ def highest_sign_in():
             active_username = username_list.read().splitlines() 
             player = request.form['get_username'].lower() 
             if player in active_username:
-                open('./data/highest/highest_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
-                open('./data/highest/highest_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
+                session['user'] = player
+                open('./data/highest/highest_correct_answer.txt', 'w').close()  
+                open('./data/highest/highest_incorrect_answer.txt', 'w').close() 
                 return redirect(url_for('highest_user', highest_username = request.form['get_username']))   
             else:
                 message = "Sorry, this username is incorrect. New User?"    
@@ -637,13 +648,14 @@ def highest_user(highest_username):
                 score = score
                 check_correct = False
 
-            # When all questions have been answered, save final score #
+            # When all questions have been answered, save final score, logoff user #
             if index == count_questions:  # Total number of questions for category
                 write_to_file('./data/highest/highest_leaders.txt'
                                , str(todays_date) + ':'
                                + highest_username + ':'
                                + str(count_questions) + ':'
-                               + str(score) + '\n') 
+                               + str(score) + '\n')
+                session.pop("user", None)                 
                 return redirect('highest_completed_quiz')
 
     return render_template('quiz.html',
@@ -709,10 +721,11 @@ def islands_get_username():
                 message = "username taken"
             else: 
                 file = open('./data/islands/islands_username.txt', 'a')
-                file.write(player + '\n')  
+                file.write(player + '\n') 
+                session['user'] = player
                 open('./data/islands/islands_correct_answer.txt', 'w').close()  
                 open('./data/islands/islands_incorrect_answer.txt', 'w').close()
-                return redirect(url_for('islands_user'))
+                return redirect(url_for('islands_user', islands_username = request.form['get_username'])) 
     return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, username_message=message, username_player=player)    
 
 
@@ -734,8 +747,9 @@ def islands_sign_in():
             active_username = username_list.read().splitlines() 
             player = request.form['get_username'].lower() 
             if player in active_username:
-                open('./data/islands/islands_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
-                open('./data/islands/islands_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
+                session['user'] = player
+                open('./data/islands/islands_correct_answer.txt', 'w').close()   
+                open('./data/islands/islands_incorrect_answer.txt', 'w').close() 
                 return redirect(url_for('islands_user', islands_username = request.form['get_username']))   
             else:
                 message = "Sorry, this username is incorrect. New User?"    
@@ -782,13 +796,14 @@ def islands_user(islands_username):
                 score = score
                 check_correct = False
 
-            # When all questions have been answered, save final score #
+            # When all questions have been answered, save final score, logoff User #
             if index == count_questions:  # Total number of questions for category
                 write_to_file('./data/islands/islands_leaders.txt'
                                , str(todays_date) + ':'
                                + islands_username + ':'
                                + str(count_questions) + ':'
                                + str(score) + '\n') 
+                session.pop("user", None)                
                 return redirect('islands_completed_quiz')
 
     return render_template('quiz.html',
@@ -852,6 +867,13 @@ def leaderboard():
                                           islands_leaders    = islands_leaders,
                                           populous_leaders   = populous_leaders)  
  
+# ------------------#
+# log_out category #
+# ------------------#
+@app.route('/log_out', methods=['GET', 'POST'])
+def log_out(): 
+    session.pop("user", None)
+    return render_template("logged_out.html")
     
 # -----------------------------------#
 # Get Username for populous category #
@@ -875,9 +897,10 @@ def populous_get_username():
             else: 
                 file = open('./data/populous/populous_username.txt', 'a')
                 file.write(player + '\n') 
-                open('./data/populous/populous_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
-                open('./data/popolous/populous_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt
-                return redirect(url_for('populous_user'))
+                session['user'] = player
+                open('./data/populous/populous_correct_answer.txt', 'w').close()   
+                open('./data/populous/populous_incorrect_answer.txt', 'w').close() 
+                return redirect(url_for('populous_user', populous_username = request.form['get_username']))   
     return render_template('get_username.html',category=catname, img_id=imgname, url_id=urlname, urlforname=urlforname, username_message=message, username_player=player)   
     
 
@@ -899,8 +922,9 @@ def populous_sign_in():
             active_username = username_list.read().splitlines() 
             player = request.form['get_username'].lower() 
             if player in active_username:
-                open('./data/populous/populous_correct_answer.txt', 'w').close()   # Create correct_answers.txt 
-                open('./data/populous/populous_incorrect_answer.txt', 'w').close() # Create incorrect_answers.txt 
+                session['user'] = player
+                open('./data/populous/populous_correct_answer.txt', 'w').close()   
+                open('./data/populous/populous_incorrect_answer.txt', 'w').close() 
                 return redirect(url_for('populous_user', populous_username = request.form['get_username']))   
             else:
                 message = "Sorry, this username is incorrect. New User?"    
@@ -947,13 +971,14 @@ def populous_user(populous_username):
                 score = score
                 check_correct = False
 
-            # When all questions have been answered, save final score #
+            # When all questions have been answered, save final score, logoff user #
             if index == count_questions:  # Total number of questions for category
                 write_to_file('./data/populous/populous_leaders.txt'
                                , str(todays_date) + ':'
                                + populous_username + ':'
                                + str(count_questions) + ':'
-                               + str(score) + '\n') 
+                               + str(score) + '\n')
+                session.pop("user", None)               
                 return redirect('populous_completed_quiz')
 
     return render_template('quiz.html',

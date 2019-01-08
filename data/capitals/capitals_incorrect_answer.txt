@@ -1,0 +1,15 @@
+Q01:San Jose
+Q02:Honiara
+Q03:Bishkek
+Q04:Canberra
+Q06:Vaduz
+Q07:Suva
+Q08:Juba
+Q09:Accra
+Q10:Caracas
+Q12:Minsk
+Q13:Daka
+Q14:Kingston
+Q15:Beruit
+Q17:Suca
+Q18:Dublin

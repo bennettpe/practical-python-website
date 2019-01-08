@@ -1,0 +1,7 @@
+Q02:Munich
+Q04:Madrid
+Q06:Bengaluru
+Q15:Tehran
+Q16:Mexico City
+Q18:Bogata
+Q20:Lhasa

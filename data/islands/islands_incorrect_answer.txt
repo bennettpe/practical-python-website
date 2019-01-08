@@ -1,0 +1,12 @@
+Q01:Japan
+Q05:Turkey
+Q06:Spain
+Q07:Peru
+Q08:Egypt
+Q10:Oman
+Q12:Nigeria
+Q13:Norway
+Q15:Japan
+Q16:Australia
+Q17:Brunei
+Q18:Spain
