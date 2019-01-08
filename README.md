@@ -200,9 +200,9 @@ The following file directory structure was created in the Cloud9 environment.
 │   ├── js                     # Bootstrap files
 │   ├── scss                   # Bootstrap files
 │   ├── vendor                 # Bootstrap files
-│   └── wireframe
+│   └── wireframe              # Mockup and Planning files
 │    
-├── templates                 # html templates
+├── templates                  # html templates
 │   ├── base.html
 │   ├── completed_quiz.html  
 │   ├── footer.html

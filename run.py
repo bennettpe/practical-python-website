@@ -97,7 +97,7 @@ def get_last_line(filename):
         
 app = Flask(__name__)
 # Key generated from Secretkey.py
-app.secret_key = "b'\xa0\xba+\xe5\xaa\x8b\xac\x01\x96\x1f<)86\x84\x04" 
+app.secret_key = os.getenv("SECRECT", "b'\xa0\xba+\xe5\xaa\x8b\xac\x01\x96\x1f<)86\x84\x04") 
 
 
 # --------------------------------#
@@ -1024,6 +1024,4 @@ def populous_completed_quiz():
 
                           
 if __name__ == '__main__': 
-    app.run(host=os.environ.get('IP'), 
-    port=int(os.environ.get('PORT')), 
-    debug=True)  
+    app.run(host=os.getenv("IP", "0.0.0.0"), port=int(os.getenv('PORT',"5000")), debug=False)  
