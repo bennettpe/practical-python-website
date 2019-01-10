@@ -1,6 +1,6 @@
 # Practical Python Milestone 3 Project
 
-## [Riddle-Me-This Guessing Game](https://)
+## [Riddle-Me-This Guessing Game](https://practical-python-project.herokuapp.com/)
 
 This is the milestone project that I have created for the **“Practical Python”** module, which is part of  “Full Stack Web Development Course” offered by Code Institute.
 
