@@ -2,7 +2,6 @@ import os
 from datetime import datetime
 from flask import Flask, flash, json, render_template, redirect, request, session, url_for
 from natsort import natsorted
-
     
 # -------------------------------- #
 # Count question_numbers function #
@@ -1018,7 +1017,6 @@ def populous_completed_quiz():
                             correct_answers = correct_answers, 
                             last_username = last_username
                           )
-
                           
-if __name__ == '__main__': 
-    app.run(host=os.getenv("IP", "0.0.0.0"), port=int(os.getenv('PORT',"5000")), debug=False)  
+if __name__ == '__main__':
+     app.run(host=os.getenv("IP", "0.0.0.0"), port=int(os.getenv('PORT',"5000")), debug=False) 
