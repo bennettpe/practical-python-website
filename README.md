@@ -347,7 +347,7 @@ Had missing ending **"** on link.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This will show the packages and Versions that Natsort has installed, and these have been copied <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to the **requirements.txt file**. 
 
 ```python
-		Click==7.0
+        Click==7.0
         Flask==1.0.2
         Flask-DebugToolbar==0.10.1
         Flask-Testing==0.7.1
