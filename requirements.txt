@@ -4,7 +4,7 @@ Flask-DebugToolbar==0.10.1
 Flask-Testing==0.7.1
 Jinja2==2.10.1
 MarkupSafe==1.1.1
-Werkzeug==0.14.1
+Werkzeug==0.15.5
 blinker==1.4
 itsdangerous==1.1.0
-natsort==5.5.0
+natsort==7.0.1
