@@ -1,9 +1,0 @@
-Q03:Arizona
-Q06:Yemen
-Q07:Europe
-Q09:Sweden
-Q10:Pretoria
-Q12:Peru
-Q13:Grenada
-Q15:Poland
-Q17:90

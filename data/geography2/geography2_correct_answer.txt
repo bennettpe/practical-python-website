@@ -1,9 +1,0 @@
-Q01:Russia
-Q02:Hong Kong
-Q04:Nigeria
-Q05:25000
-Q08:Nepal
-Q11:6852
-Q14:Nauru
-Q16:Loch Ness
-Q18:Andes
