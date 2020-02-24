@@ -71,7 +71,7 @@ Technologies used in the construction of this project include,
 * [JavaScript](https://www.javascript.com/) Javascript is a dynamic computer programming language. And most commonly used as a part of web pages
 * [Natsort](https://natsort.readthedocs.io/en/master/) Simple yet flexible natural sorting in Python
 * [Pencil](https://pencil.evolus.vn/) is an open-source GUI prototyping tool used to create Wireframe mockup.
-* [Python 3.4.3](https://www.python.org/) is a scripting language.
+* [Python 3.4.3](https://www.python.org/) is a scripting language. updated to `3.6.6`
 * [Slack](https://code-institute-room.slack.com/messages) Slack is a collaboration hub that connects your organization
 * [StartBootstrap](https://startbootstrap.com/) Free Bootstrap themes and templates.
 
@@ -84,9 +84,9 @@ Technologies used in the construction of this project include,
     `sudo pip3 freeze --local`  
     This will show the packages and Versions that Flask has installed,   
     `Click==7.0`   
-    `Jinja2==2.10`   
-    `MarkupSafe==1.1.0`   
-    `Werkzeug==0.14.1`   
+    `Jinja2==2.10` updated to `2.10.1`   
+    `MarkupSafe==1.1.0` updated to `1.1.1`  
+    `Werkzeug==0.14.1` updated to `0.15.5`   
     `itsdangerous==1.1.0`
 
 ### Create run.py file
@@ -344,22 +344,22 @@ Had missing ending **"** on link.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `Successfully installed natsort`  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Then Type in the following command     
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `sudo pip3 freeze --local > requirements.txt`  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This will show the packages and Versions that Natsort has installed, and these have been copied &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to the **requirements.txt file**. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This will show the packages and Versions that Natsort has installed, and these have been copied <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to the **requirements.txt file**. 
 
 ```python
 		Click==7.0
-	    Flask==1.0.2
-	    Flask-DebugToolbar==0.10.1
-	    Flask-Testing==0.7.1
-	    Jinja2==2.10
-	    MarkupSafe==1.1.0
-	    Werkzeug==0.14.1
-	    blinker==1.4
-	    itsdangerous==1.1.0
-	    natsort==5.5.0
+        Flask==1.0.2
+        Flask-DebugToolbar==0.10.1
+        Flask-Testing==0.7.1
+        Jinja2==2.10.1
+        MarkupSafe==1.1.1
+        Werkzeug==0.15.5
+        blinker==1.4
+        itsdangerous==1.1.0
+        natsort==7.0.1
 ``` 
  
-3. The refactoring of the ***_quiz.html**, caused a issue as the Highest & Populous categories have 3 questions instead of 4 so the 4th question were showing up as blank, it was fix as follows:
+1. The refactoring of the ***_quiz.html**, caused a issue as the Highest & Populous categories have 3 questions instead of 4 so the 4th question were showing up as blank, it was fix as follows:
 `catnum=Three` for 3 questions and `catman=Four` for 4 questions in the quiz sections of the **run.py**
 
 	```python
